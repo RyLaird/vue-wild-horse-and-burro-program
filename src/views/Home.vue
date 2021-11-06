@@ -19,7 +19,7 @@
 
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
-      <v-app-bar-title class="text-center justify-center py-6">
+      <v-app-bar-title class="text-center justify-left py-5">
         Horse and Burro Program
       </v-app-bar-title>
 
