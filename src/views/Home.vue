@@ -1,7 +1,7 @@
 <template>
   <v-card class="overflow-hidden">
     <v-app-bar
-      color="#6A76AB"
+      color="blue darken-2"
       dark
       shrink-on-scroll
       prominent
@@ -12,7 +12,7 @@
       <template v-slot:img="{ props }">
         <v-img
           v-bind="props"
-          gradient="to top right, rgba(100,115,201,.7), rgba(25,32,72,.7)"
+          gradient="to top right, rgba(3,147,230,.7), rgba(1,73,115,.7)"
         ></v-img>
       </template>
 
