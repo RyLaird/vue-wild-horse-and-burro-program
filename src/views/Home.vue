@@ -19,7 +19,9 @@
 
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
-      <v-app-bar-title>Horse and Burro Program</v-app-bar-title>
+      <v-app-bar-title class="text-center justify-center py-6">
+        Horse and Burro Program
+      </v-app-bar-title>
 
       <v-spacer></v-spacer>
 
@@ -37,8 +39,9 @@
 
       <template v-slot:extension>
         <v-tabs 
-        align-with-title grow
+        align-with-title
         icons-and-text
+        grow
         >
           <v-tab>
             <v-icon>mdi-home</v-icon>
