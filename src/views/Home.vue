@@ -43,15 +43,15 @@
         icons-and-text
         grow
         >
-          <v-tab>
+          <v-tab to="/">
             <v-icon>mdi-home</v-icon>
             Home
           </v-tab>
-          <v-tab>
+          <v-tab to="/data">
             <v-icon>mdi-chart-line</v-icon>
             Program Data
           </v-tab>
-          <v-tab>
+          <v-tab to="/map">
             <v-icon>mdi-map</v-icon>
             Web Map
           </v-tab>
