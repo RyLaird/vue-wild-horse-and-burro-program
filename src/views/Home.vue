@@ -1,7 +1,6 @@
 <template>
   <v-card class="overflow-hidden">
     <v-app-bar
-      absolute
       color="#6A76AB"
       dark
       shrink-on-scroll
@@ -17,7 +16,7 @@
         ></v-img>
       </template>
 
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
+      <!-- <v-app-bar-nav-icon></v-app-bar-nav-icon> -->
 
       <v-app-bar-title class="text-center justify-left py-5">
         Horse and Burro Program
