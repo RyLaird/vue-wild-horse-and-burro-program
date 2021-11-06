@@ -1,5 +1,6 @@
 <template>
-  <v-container>
+  <!-- <v-container> -->
+  <div>
     <v-row class="text-center">
       <v-col cols="12">
         <v-img
@@ -88,7 +89,8 @@
         </v-row>
       </v-col>
     </v-row>
-  </v-container>
+  </div>
+  <!-- </v-container> -->
 </template>
 
 <script>
