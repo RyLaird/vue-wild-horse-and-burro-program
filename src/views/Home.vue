@@ -36,10 +36,22 @@
       </v-btn>
 
       <template v-slot:extension>
-        <v-tabs align-with-title>
-          <v-tab>Home</v-tab>
-          <v-tab>Program Data</v-tab>
-          <v-tab>Web Map</v-tab>
+        <v-tabs 
+        align-with-title grow
+        icons-and-text
+        >
+          <v-tab>
+            <v-icon>mdi-home</v-icon>
+            Home
+          </v-tab>
+          <v-tab>
+            <v-icon>mdi-chart-line</v-icon>
+            Program Data
+          </v-tab>
+          <v-tab>
+            <v-icon>mdi-map</v-icon>
+            Web Map
+          </v-tab>
         </v-tabs>
       </template>
     </v-app-bar>
