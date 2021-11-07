@@ -1,5 +1,5 @@
 <template>
-  <div id="pie">
+  <div class="pie-wrapper" id="pie">
     <v-chart :options="pie" autoresize/>
   </div>
 </template>

@@ -122,6 +122,37 @@
           </v-card-text>
         </v-card>
       </div>
+            <div>
+        <h3>Hello</h3>
+        <v-card class="mt-5 mb-8">
+          <v-card-text>
+            <v-container>
+              <v-row>
+                <v-col cols="12" md="7">
+                  <population-map></population-map>
+                </v-col>
+                <v-col cols="12" md="5">
+                  <div>
+                    <h1 class="text-center font-weight-bold mb-10">
+                      86,189
+                    </h1>
+                    <p>
+                      The BLM offers wild horses and burros that 
+                      were removed from the range for adoption into 
+                      private care. Since 1971, the BLM has adopted out 
+                      more than 250,000 wild horses and burros nationwide. 
+                      Potential adopters can attend an off-site adoption event, 
+                      visit a BLM adoption center, or participate in an Internet
+                      Adoption event. For general questions on adopting a wild 
+                      horse or burro, visit the Frequently Asked Questions page.
+                    </p>
+                  </div>
+                </v-col>
+              </v-row>
+            </v-container>
+          </v-card-text>
+        </v-card>
+      </div>
     </v-container>
     </v-main>
   </div>
@@ -131,6 +162,7 @@
   import DataIntro from '../components/DataIntro'
   import PieChart from '../components/PieChart'
   import LineChart from '../components/LineChart.vue'
+  import PopulationMap from '../components/PopulationMap.vue'
 
   export default {
     name: 'Data',
@@ -138,7 +170,8 @@
     components: {
       DataIntro,
       PieChart,
-      LineChart
+      LineChart,
+      PopulationMap
     },
   }
 
