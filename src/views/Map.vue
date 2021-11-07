@@ -1,5 +1,28 @@
 <template>
   <div class="data">
+    <v-navigation-drawer
+      v-model="drawer"
+      app
+      fixed
+    >
+      <!-- <span v-if="loading">Loading...</span>
+      <label for="checkbox">Herd Areas    </label>
+      <input
+        id="checkbox"
+        v-model="show"
+        type="checkbox"
+      > -->
+      <v-checkbox
+        v-model="show"
+        :label="'Herd Areas'"
+      >
+      </v-checkbox>
+      <input
+        v-model="fillColor"
+        type="color"
+      >
+      <!--  -->
+    </v-navigation-drawer>
     <v-app-bar
       color="#6A76AB"
       dense
@@ -56,55 +79,34 @@
         </v-tabs>
       </template>
     </v-app-bar>
-    <v-main>
-      <v-navigation-drawer
-        v-model="drawer"
-        app
-      >
-        <span v-if="loading">Loading...</span>
-        <label for="checkbox">Herd Areas    </label>
-        <input
-          id="checkbox"
-          v-model="show"
-          type="checkbox"
-        >
-        <!-- <label for="checkboxTooltip">Enable tooltip</label>
-        <input
-          id="checkboxTooltip"
-          v-model="enableTooltip"
-          type="checkbox"
-        > -->
-        <v-spacer></v-spacer>
-        <input
-          v-model="fillColor"
-          type="color"
-        >
-        <!--  -->
-      </v-navigation-drawer>
+
       <!-- <v-app-bar app>
         <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
         <v-toolbar-title>Application</v-toolbar-title>
       </v-app-bar> -->
-      <v-container fluid>
-        <l-map
-          :zoom="zoom"
-          :center="center"
-          style="height: 800px"
-        > 
-          <l-tile-layer
-            :url="url"
-            :attribution="attribution"
-          />
-          <l-geo-json
-            v-if="show"
-            :geojson="geojson"
-            :options="options"
-            :options-style="styleFunction"
-          />
-        <!-- <l-marker :lat-lng="marker" /> -->
-        </l-map>
-      </v-container>
+    <v-main>
+      <v-card elevation-10>
+        <v-container fluid>
+          <l-map
+            :zoom="zoom"
+            :center="center"
+            style="height: 800px"
+          > 
+            <l-tile-layer
+              :url="url"
+              :attribution="attribution"
+            />
+            <l-geo-json
+              v-if="show"
+              :geojson="geojson"
+              :options="options"
+              :options-style="styleFunction"
+            />
+          <!-- <l-marker :lat-lng="marker" /> -->
+          </l-map>
+        </v-container>
+      </v-card>
     </v-main>
   </div>
 </template>
@@ -147,7 +149,7 @@ export default {
       const fillColor = this.fillColor; // important! need touch fillColor in computed for re-calculate when change fillColor
       return () => {
         return {
-          weight: 2,
+          weight: 1,
           color: "#ECEFF1",
           opacity: 1,
           fillColor: fillColor,
@@ -186,5 +188,5 @@ export default {
 </script>
 
 <style scoped>
-/* .map { height: 800px } */
+
 </style>
