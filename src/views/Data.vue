@@ -56,6 +56,7 @@
         </v-tabs>
       </template>
     </v-app-bar>
+    <v-main>
     <v-container>
       <data-intro></data-intro>
       <div>
@@ -122,6 +123,7 @@
         </v-card>
       </div>
     </v-container>
+    </v-main>
   </div>
 </template>
 
