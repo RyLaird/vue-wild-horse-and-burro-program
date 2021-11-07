@@ -12,6 +12,7 @@
         v-model="show"
         type="checkbox"
       > -->
+      <span v-if="loading">Loading...</span>
       <v-checkbox
         v-model="show"
         :label="'Herd Areas'"
