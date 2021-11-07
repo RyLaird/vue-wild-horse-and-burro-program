@@ -129,7 +129,7 @@
             <v-container>
               <v-row>
                 <v-col cols="12" md="7">
-                  <population-map></population-map>
+                  <sankey></sankey>
                 </v-col>
                 <v-col cols="12" md="5">
                   <div>
@@ -162,7 +162,8 @@
   import DataIntro from '../components/DataIntro'
   import PieChart from '../components/PieChart'
   import LineChart from '../components/LineChart.vue'
-  import PopulationMap from '../components/PopulationMap.vue'
+  // import PopulationMap from '../components/PopulationMap.vue'
+  import Sankey from '../components/Sankey.vue'
 
   export default {
     name: 'Data',
@@ -171,7 +172,7 @@
       DataIntro,
       PieChart,
       LineChart,
-      PopulationMap
+      Sankey
     },
   }
 
