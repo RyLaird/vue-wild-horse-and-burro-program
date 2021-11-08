@@ -97,9 +97,6 @@
           <v-card-text>
             <v-container>
               <v-row>
-                <v-col cols="12" md="7">
-                  <line-chart></line-chart>
-                </v-col>
                 <v-col cols="12" md="5">
                   <div>
                     <h1 class="text-center font-weight-bold mb-10">
@@ -117,6 +114,9 @@
                     </p>
                   </div>
                 </v-col>
+                <v-col cols="12" md="7">
+                  <sankey></sankey>
+                </v-col>
               </v-row>
             </v-container>
           </v-card-text>
@@ -129,7 +129,7 @@
             <v-container>
               <v-row>
                 <v-col cols="12" md="7">
-                  <sankey></sankey>
+                  <line-chart></line-chart>
                 </v-col>
                 <v-col cols="12" md="5">
                   <div>
