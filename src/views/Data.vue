@@ -160,7 +160,7 @@
             <v-container>
               <v-row>
                 <v-col cols="12" md="7">
-                  <pictorial></pictorial>
+                  <!-- <pictorial></pictorial> -->
                 </v-col>
                 <v-col cols="12" md="5">
                   <div>
@@ -195,7 +195,7 @@
   import LineChart from '../components/LineChart.vue'
   // import PopulationMap from '../components/PopulationMap.vue'
   import Sankey from '../components/Sankey.vue'
-  import Pictorial from '../components/Pictorial.vue'
+  // import Pictorial from '../components/Pictorial.vue'
 
   export default {
     name: 'Data',
@@ -205,7 +205,7 @@
       PieChart,
       LineChart,
       Sankey,
-      Pictorial
+      // Pictorial
     },
   }
 
