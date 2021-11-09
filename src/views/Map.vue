@@ -14,7 +14,7 @@
       > -->
       <span v-if="loading">Loading...</span>
       <v-checkbox
-        v-model="show"
+        v-model="show1"
         :label="'Herd Areas'"
       >
       </v-checkbox>
@@ -23,6 +23,11 @@
         type="color"
       >
       <!--  -->
+      <v-checkbox
+        v-model="show2"
+        :label="'Herd Management Areas'"
+      >
+      </v-checkbox>
     </v-navigation-drawer>
     <v-app-bar
       color="#6A76AB"
@@ -99,11 +104,18 @@
               :attribution="attribution"
             />
             <l-geo-json
-              v-if="show"
-              :geojson="geojson"
+              v-if="show1"
+              :geojson="geojson_HA"
               :options="options"
               :options-style="styleFunction"
             />
+            <l-geo-json
+            v-if="show2"
+            :geojson="geojson_HMA"
+            :options="options"
+            :options-style="styleFunction"
+            >
+            </l-geo-json>
           <!-- <l-marker :lat-lng="marker" /> -->
           </l-map>
         </v-container>
@@ -128,11 +140,13 @@ export default {
     return {
       drawer: null,
       loading: false,
-      show: true,
+      show1: true,
+      show2: true,
       enableTooltip: true,
       zoom: 6,
       center: [39, -109],
-      geojson: null,
+      geojson_HA: null,
+      geojson_HMA: null,
       fillColor: "#e4ce7f",
       url: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
       attribution:
@@ -178,9 +192,12 @@ export default {
   },
   async created() {
     this.loading = true;
-    const response = await fetch("https://raw.githack.com/RyLaird/vue-wild-horse-and-burro-program/master/src/assets/whb_ha_pop_poly.geojson")
-    const data = await response.json();
-    this.geojson = data;
+    const response_HA = await fetch("https://raw.githack.com/RyLaird/vue-wild-horse-and-burro-program/master/src/assets/whb_ha_pop_poly.geojson")
+    const data_HA = await response_HA.json();
+    this.geojson_HA = data_HA;
+    const response_HMA = await fetch("https://raw.githack.com/RyLaird/vue-wild-horse-and-burro-program/master/src/assets/whb_hma_pop_poly.geojson")
+    const data_HMA = await response_HMA.json();
+    this.geojson_HMA = data_HMA;
     this.loading = false;
   }
 };
