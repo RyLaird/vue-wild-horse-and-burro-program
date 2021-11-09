@@ -1,6 +1,6 @@
 <template>
   <div class="line-wrapper">
-    <v-chart :options="line"/>
+    <v-chart :options="line" autoresize />
   </div>
 </template>
 
