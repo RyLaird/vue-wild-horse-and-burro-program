@@ -19,7 +19,7 @@
       >
       </v-checkbox>
       <input
-        v-model="fillColor"
+        v-model="fillColor1"
         type="color"
       >
       <!--  -->
@@ -28,6 +28,10 @@
         :label="'Herd Management Areas'"
       >
       </v-checkbox>
+      <input
+        v-model="fillColor2"
+        type="color"
+      >
     </v-navigation-drawer>
     <v-app-bar
       color="#6A76AB"
@@ -107,13 +111,13 @@
               v-if="show1"
               :geojson="geojson_HA"
               :options="options"
-              :options-style="styleFunction"
+              :options-style="styleFunction_ha"
             />
             <l-geo-json
             v-if="show2"
             :geojson="geojson_HMA"
             :options="options"
-            :options-style="styleFunction"
+            :options-style="styleFunction_hma"
             >
             </l-geo-json>
           <!-- <l-marker :lat-lng="marker" /> -->
@@ -147,7 +151,8 @@ export default {
       center: [39, -109],
       geojson_HA: null,
       geojson_HMA: null,
-      fillColor: "#e4ce7f",
+      fillColor1: "#e4ce7f",
+      fillColor2: "#91251d",
       url: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
       attribution:
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions>CARTO</a>',
@@ -160,14 +165,26 @@ export default {
         onEachFeature: this.onEachFeatureFunction
       };
     },
-    styleFunction() {
-      const fillColor = this.fillColor; // important! need touch fillColor in computed for re-calculate when change fillColor
+    styleFunction_ha() {
+      const fillColor1 = this.fillColor1; // important! need touch fillColor in computed for re-calculate when change fillColor
       return () => {
         return {
           weight: 1,
           color: "#ECEFF1",
           opacity: 1,
-          fillColor: fillColor,
+          fillColor: fillColor1,
+          fillOpacity: 1
+        };
+      };
+    },
+        styleFunction_hma() {
+      const fillColor2 = this.fillColor2; // important! need touch fillColor in computed for re-calculate when change fillColor
+      return () => {
+        return {
+          weight: 1,
+          color: "#ECEFF1",
+          opacity: 1,
+          fillColor: fillColor2,
           fillOpacity: 1
         };
       };
