@@ -129,7 +129,7 @@
 </template>
 
 <script>
-import { latLng } from "leaflet";
+// import { latLng } from "leaflet";
 import { LMap, LTileLayer, LGeoJson} from "vue2-leaflet";
 
 export default {
@@ -156,7 +156,7 @@ export default {
       url: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
       attribution:
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions>CARTO</a>',
-      marker: latLng(-109 -1.219482)
+      // marker: latLng(-109 -1.219482)
     };
   },
   computed: {
