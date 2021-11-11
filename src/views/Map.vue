@@ -5,13 +5,6 @@
       app
       fixed
     >
-      <!-- <span v-if="loading">Loading...</span>
-      <label for="checkbox">Herd Areas    </label>
-      <input
-        id="checkbox"
-        v-model="show"
-        type="checkbox"
-      > -->
       <span v-if="loading">Loading...</span>
       <v-checkbox
         v-model="show1"
@@ -32,6 +25,17 @@
         v-model="fillColor2"
         type="color"
       >
+      <v-checkbox
+        v-model="show3"
+        :label="'Adoption Locations'"
+      >
+      </v-checkbox>
+      <v-spacer>
+      <v-spacer></v-spacer>
+      </v-spacer>
+      <v-btn @click="recenterMap()">
+        <span class="mdi mdi-home" />
+      </v-btn>  
     </v-navigation-drawer>
     <v-app-bar
       color="#6A76AB"
@@ -102,7 +106,7 @@
             :zoom="zoom"
             :center="center"
             style="height: 800px"
-          > 
+          >
             <l-tile-layer
               :url="url"
               :attribution="attribution"
@@ -114,13 +118,19 @@
               :options-style="styleFunction_ha"
             />
             <l-geo-json
-            v-if="show2"
-            :geojson="geojson_HMA"
-            :options="options"
-            :options-style="styleFunction_hma"
+              v-if="show2"
+              :geojson="geojson_HMA"
+              :options="options"
+              :options-style="styleFunction_hma"
             >
             </l-geo-json>
-          <!-- <l-marker :lat-lng="marker" /> -->
+            <l-geo-json
+              v-if="show3"
+              :geojson="geojson_adoption"
+              :options="markerOptions"
+              :icon="icon"
+            >
+            </l-geo-json>
           </l-map>
         </v-container>
       </v-card>
@@ -130,7 +140,9 @@
 
 <script>
 // import { latLng } from "leaflet";
+// import L from 'leaflet'
 import { LMap, LTileLayer, LGeoJson} from "vue2-leaflet";
+import 'leaflet/dist/leaflet.css'
 
 export default {
   name: "Example",
@@ -146,6 +158,7 @@ export default {
       loading: false,
       show1: true,
       show2: true,
+      show3: true,
       enableTooltip: true,
       zoom: 6,
       center: [39, -109],
@@ -156,13 +169,22 @@ export default {
       url: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
       attribution:
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions>CARTO</a>',
-      // marker: latLng(-109 -1.219482)
+      // icon: L.icon({
+      //   iconUrl: '<img src="https://img.icons8.com/ios-filled/50/000000/horses-sign.png"',
+      //   iconSize: [32, 37],
+      //   iconAnchor: [16, 37]
+      // }),
     };
   },
   computed: {
     options() {
       return {
-        onEachFeature: this.onEachFeatureFunction
+        onEachFeature: this.onEachFeatureFunction1
+      };
+    },
+    markerOptions() {
+      return {
+        onEachFeature: this.onEachMarkerFunction
       };
     },
     styleFunction_ha() {
@@ -177,7 +199,7 @@ export default {
         };
       };
     },
-        styleFunction_hma() {
+      styleFunction_hma() {
       const fillColor2 = this.fillColor2; // important! need touch fillColor in computed for re-calculate when change fillColor
       return () => {
         return {
@@ -189,7 +211,7 @@ export default {
         };
       };
     },
-    onEachFeatureFunction() {
+    onEachFeatureFunction1() {
       if (!this.enableTooltip) {
         return () => {};
       }
@@ -205,6 +227,20 @@ export default {
           { permanent: false, sticky: true }
         );
       };
+    },
+    onEachMarkerFunction() {
+      return (feature, layer) => {
+        layer.bindTooltip(
+            "<div>City: " +
+            feature.properties.city +
+            "</div><div>Address: " +
+            feature.properties.address +
+            "</div<div> Description: " +
+            feature.properties.description +
+          "</div>",
+          { permanent: false, sticky: true }
+        );
+      };
     }
   },
   async created() {
@@ -212,9 +248,15 @@ export default {
     const response_HA = await fetch("https://raw.githack.com/RyLaird/vue-wild-horse-and-burro-program/master/src/assets/whb_ha_pop_poly.geojson")
     const data_HA = await response_HA.json();
     this.geojson_HA = data_HA;
+
     const response_HMA = await fetch("https://raw.githack.com/RyLaird/vue-wild-horse-and-burro-program/master/src/assets/whb_hma_pop_poly.geojson")
     const data_HMA = await response_HMA.json();
     this.geojson_HMA = data_HMA;
+
+    const response_adoption = await fetch("https://raw.githack.com/RyLaird/vue-wild-horse-and-burro-program/master/src/assets/adoption_locations.geojson")
+    const data_adoption = await response_adoption.json();
+    this.geojson_adoption = data_adoption;
+
     this.loading = false;
   }
 };
@@ -222,6 +264,6 @@ export default {
 
 </script>
 
-<style scoped>
+<style>
 
 </style>
