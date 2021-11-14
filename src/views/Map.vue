@@ -114,7 +114,7 @@
       <v-card elevation-10>
         <v-container fluid>
           <!-- SET MAP -->
-          <l-map
+          <l-map ref="myMap"
             :zoom="zoom"
             :center="center"
             style="height: 720px"
@@ -153,14 +153,29 @@
   </div>
 </template>
 
+// **********   SCRIPT START  ***********
 <script>
+
 // import { latLng } from "leaflet";
 // import {L} from 'leaflet'
 import { LMap, LTileLayer, LGeoJson} from "vue2-leaflet";
 import 'leaflet/dist/leaflet.css'
+import { Icon } from 'leaflet';
+
+
+// fix to icons not displaying on leaflet map in Map.vue
+delete Icon.Default.prototype._getIconUrl;
+Icon.Default.mergeOptions({
+  iconRetinaUrl: require('/src/assets/horse.png'),
+  iconUrl: require('/src/assets/horse.png'),
+  shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
+  shadowSize: [20,20],
+  iconSize: [40,40]
+});
 
 export default {
   name: "Example",
+  // components used
   components: {
     LMap,
     LTileLayer,
@@ -184,36 +199,28 @@ export default {
       url: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
       attribution:
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions>CARTO</a>',
-      // icon: L.icon({
-      //   iconUrl: '<img src="https://img.icons8.com/ios-filled/50/000000/horses-sign.png"',
-      //   iconSize: [32, 37],
-      //   iconAnchor: [16, 37]
-      // }),
     };
   },
   computed: {
+    // herd areas options
     options() {
       return {
         onEachFeature: this.onEachFeatureFunction1
       };
     },
+    // herd management area options
     options2() {
       return {
         onEachFeature: this.onEachFeatureFunction2
       }
     },
+    // adoption location options
     markerOptions() {
       return {
         onEachFeature: this.onEachMarkerFunction,
-        // pointToLayer: function (feature, latLng) {
-        //   return L.circleMarker(latLng, {
-        //     fillColor: '#FBC94D',
-        //     weight: 1,
-        //     radius: 8
-        //   })
-        // }
       };
     },
+    // herd area stylefunction
     styleFunction_ha() {
       const fillColor1 = this.fillColor1; // important! need touch fillColor in computed for re-calculate when change fillColor
       return () => {
@@ -226,7 +233,8 @@ export default {
         };
       };
     },
-      styleFunction_hma() {
+    // herd management area stylefunction
+    styleFunction_hma() {
       const fillColor2 = this.fillColor2; // important! need touch fillColor in computed for re-calculate when change fillColor
       return () => {
         return {
@@ -274,6 +282,10 @@ export default {
     },
     onEachMarkerFunction() {
       return (feature, layer) => {
+        layer.on('click', function() {
+          this.map = this.$refs.myMap.mapObject
+          this.map.fitBounds(layer.getBounds())
+        })
         layer.bindTooltip(
             "<div>City: " +
             feature.properties.city +
