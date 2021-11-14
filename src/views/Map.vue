@@ -186,6 +186,7 @@ export default {
     return {
       drawer: null,
       loading: false,
+      map: true,
       show1: true,
       show2: true,
       show3: false,
@@ -297,7 +298,7 @@ export default {
           { permanent: false, sticky: true }
         );
       };
-    }
+    },
   },
   async created() {
     this.loading = true;
