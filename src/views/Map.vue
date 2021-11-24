@@ -283,11 +283,11 @@ export default {
     },
     onEachMarkerFunction() {
       return (feature, layer) => {
-        layer.on('click', function() {
-          this.map = this.$refs.myMap.mapObject
-          this.map.fitBounds(layer.getBounds())
-        })
-        layer.bindTooltip(
+        // layer.on('click', function() {
+        //   this.map = this.$refs.myMap.mapObject
+        //   this.map.fitBounds(layer.getBounds())
+        // })
+        layer.bindPopup(
             "<div>City: " +
             feature.properties.city +
             "</div><div>Address: " +
