@@ -63,20 +63,65 @@
       max-height="800"
     >
       <v-container style="height: 1000px;">
-        <hello-world></hello-world>
+        <v-carousel
+          delimiter-icon="mdi-horseshoe"
+        >
+          <v-carousel-item
+            :src="require('../assets/c1.png' )"
+            reverse-transition="fade-transition"
+            transition="fade-transition"
+          ></v-carousel-item>
+          <v-carousel-item
+            :src="require('../assets/c2.png' )"
+            reverse-transition="fade-transition"
+            transition="fade-transition"
+          ></v-carousel-item>
+        </v-carousel>
       </v-container>
+      <center>
+        <v-footer class="foot" style="background-color: #1976D2 !important;" padless>
+          <v-card
+            style="width:100% !important"
+            flat
+            tile
+            class="blue darken-2 white--text text-center"
+          >
+            <v-card-text>
+              <v-btn v-for="icon in icons" :key="icon" class="mx-4 white--text" icon>
+                <v-icon size="24px">{{ icon }}</v-icon>
+              </v-btn>
+            </v-card-text>
+
+            <v-card-text
+              class="white--text pt-0"
+              style="width:100% !important"
+            >This is a project using public data and does not reflect the views of the Bureau of Land Management Wild Horse Program</v-card-text>
+
+            <v-divider></v-divider>
+
+            <v-card-text class="white--text">
+              {{ new Date().getFullYear() }} —
+              <strong>Wild Horse and Burro Program</strong>
+            </v-card-text>
+          </v-card>
+        </v-footer>
+      </center>
     </v-sheet>
   </v-card>
 </template>
 
 <script>
-  import HelloWorld from '../components/HelloWorld'
+  // import HelloWorld from '../components/HelloWorld'
 
   export default {
     name: 'Home',
 
     components: {
-      HelloWorld,
     },
+    data() {
+      return {
+        icons: ["mdi-facebook", "mdi-twitter", "mdi-linkedin", "mdi-instagram"]
+      }
+    }
   }
 </script>
