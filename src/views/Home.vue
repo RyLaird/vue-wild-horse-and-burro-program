@@ -62,21 +62,119 @@
       class="overflow-y-auto"
       max-height="800"
     >
-      <v-container style="height: 1000px;">
-        <hello-world></hello-world>
+      <v-container style="height: 2000px;">
+        <v-card class="mt-10">
+          <v-carousel
+            @change="btnChange = !btnChange"
+            delimiter-icon="mdi-horseshoe"
+          >
+            <v-carousel-item
+              :src="require('../assets/c1.png' )"
+              reverse-transition="fade-transition"
+              transition="fade-transition"
+            ></v-carousel-item>
+            <v-carousel-item
+              :src="require('../assets/c2.png' )"
+              reverse-transition="fade-transition"
+              transition="fade-transition"
+            ></v-carousel-item>
+          </v-carousel>
+          <v-card-text>
+            <v-row justify="center">
+              <v-btn v-if="btnChange" class="black mx-4 white--text" height="50px" width="200px">
+                View Web Map
+              </v-btn>
+              <v-btn v-if="!btnChange" class="black mx-4 white--text" height="50px" width="200px">
+                View Program Data
+              </v-btn>
+            </v-row>
+          </v-card-text>
+        </v-card>
+        <v-row class= "mt-8 mb-5">
+          <v-col>
+            <h1 class="text-center">About Wild Horses and Burros</h1>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col>
+            <p>  Wild horses and burros are defined by federal law as unbranded, unclaimed, 
+              free-roaming horses or burros found on public lands in the United States.  
+              Today, the Bureau of Land Management protects and manages wild horses and burros in 
+              balance with other public resource values on 177 herd management areas across 26.9 million 
+              acres of public lands. Most wild horses and burros living today are descendants of animals 
+              that were released or escaped from Spanish explorers, ranchers, miners, the U.S. Cavalry and 
+              Native Americans.  Wild horses and burros are diverse in their coloring, ranging from solid brown and black to colorful pintos and palominos.              </p>
+          </v-col>
+        </v-row>
+        <v-row class="mb-5">
+          <v-col>
+            <h3>Wild burros average 11 hands high (44 inches) and weigh about 500 pounds.</h3>
+          </v-col>
+          <v-col>
+            <v-card
+              elevation="10"
+            >
+              <v-img class="mb-6"
+                src="../assets/horse_burro.png">
+              </v-img>
+            </v-card>
+          </v-col>
+          <v-col>
+            <h3>Most wild horses stand 13 to 15 hands high (52-60 inches) and weigh from 700 to 1,000 pounds.</h3>
+          </v-col>
+        </v-row>
+        <v-divider></v-divider>
+        <v-row class="mt-8">
+          <v-col>
+            <h1 class="text-center">Program History</h1>
+          </v-col>
+        </v-row>
       </v-container>
+      <center>
+        <v-footer class="foot" style="background-color: #1976D2 !important;" padless>
+          <v-card
+            style="width:100% !important"
+            flat
+            tile
+            class="blue darken-2 white--text text-center"
+          >
+            <v-card-text>
+              <v-btn v-for="icon in icons" :key="icon" class="mx-4 white--text" icon>
+                <v-icon size="24px">{{ icon }}</v-icon>
+              </v-btn>
+            </v-card-text>
+
+            <v-card-text
+              class="white--text pt-0"
+              style="width:100% !important"
+            >This is a project using public data and does not reflect the views of the Bureau of Land Management Wild Horse Program</v-card-text>
+
+            <v-divider></v-divider>
+
+            <v-card-text class="white--text">
+              {{ new Date().getFullYear() }} —
+              <strong>Wild Horse and Burro Program</strong>
+            </v-card-text>
+          </v-card>
+        </v-footer>
+      </center>
     </v-sheet>
   </v-card>
 </template>
 
 <script>
-  import HelloWorld from '../components/HelloWorld'
+  // import HelloWorld from '../components/HelloWorld'
 
   export default {
     name: 'Home',
 
     components: {
-      HelloWorld,
     },
+    data() {
+      return {
+        icons: ["mdi-facebook", "mdi-twitter", "mdi-linkedin", "mdi-instagram"],
+        btnChange: false
+      }
+    }
   }
 </script>
