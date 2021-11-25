@@ -18,6 +18,9 @@ export default {
   },
     data: () => ({
         sankey: {
+            tooltip: {
+                trigger: "item"
+            },
             series: {
                 type: 'sankey',
                 layout: 'none',
