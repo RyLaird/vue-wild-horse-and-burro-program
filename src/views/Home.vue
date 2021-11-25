@@ -63,7 +63,7 @@
       max-height="800"
     >
       <v-container style="height: 2000px;">
-        <v-card>
+        <v-card class="mt-10">
           <v-carousel
             @change="btnChange = !btnChange"
             delimiter-icon="mdi-horseshoe"
@@ -90,19 +90,45 @@
             </v-row>
           </v-card-text>
         </v-card>
-        <v-row class= "mt-8 mb-8">
-          <h1>About Wild Horses and Burros</h1>
+        <v-row class= "mt-8 mb-5">
+          <v-col>
+            <h1 class="text-center">About Wild Horses and Burros</h1>
+          </v-col>
         </v-row>
         <v-row>
           <v-col>
-            <p>
-              Wild horses and burros are defined by federal law as unbranded, unclaimed, free-roaming horses or burros found on public lands in the United States.  Today, the Bureau of Land Management protects and manages wild horses and burros in balance with other public resource values on 177 herd management areas across 26.9 million acres of public lands. Most wild horses and burros living today are descendants of animals that were released or escaped from Spanish explorers, ranchers, miners, the U.S. Cavalry and Native Americans.
-
-Wild horses and burros are diverse in their coloring, ranging from solid brown and black to colorful pintos and palominos.  Most wild horses stand 13 to 15 hands high (52-60 inches) and weigh from 700 to 1,000 pounds.  Wild burros average 11 hands high (44 inches) and weigh about 500 pounds. 
-            </p>
+            <p>  Wild horses and burros are defined by federal law as unbranded, unclaimed, 
+              free-roaming horses or burros found on public lands in the United States.  
+              Today, the Bureau of Land Management protects and manages wild horses and burros in 
+              balance with other public resource values on 177 herd management areas across 26.9 million 
+              acres of public lands. Most wild horses and burros living today are descendants of animals 
+              that were released or escaped from Spanish explorers, ranchers, miners, the U.S. Cavalry and 
+              Native Americans.  Wild horses and burros are diverse in their coloring, ranging from solid brown and black to colorful pintos and palominos.              </p>
+          </v-col>
+        </v-row>
+        <v-row class="mb-5">
+          <v-col>
+            <h3>Wild burros average 11 hands high (44 inches) and weigh about 500 pounds.</h3>
+          </v-col>
+          <v-col>
+            <v-card
+              elevation="10"
+            >
+              <v-img class="mb-6"
+                src="../assets/horse_burro.png">
+              </v-img>
+            </v-card>
+          </v-col>
+          <v-col>
+            <h3>Most wild horses stand 13 to 15 hands high (52-60 inches) and weigh from 700 to 1,000 pounds.</h3>
           </v-col>
         </v-row>
         <v-divider></v-divider>
+        <v-row class="mt-8">
+          <v-col>
+            <h1 class="text-center">Program History</h1>
+          </v-col>
+        </v-row>
       </v-container>
       <center>
         <v-footer class="foot" style="background-color: #1976D2 !important;" padless>
