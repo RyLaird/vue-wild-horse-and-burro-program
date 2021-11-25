@@ -63,20 +63,51 @@
       max-height="800"
     >
       <v-container style="height: 1000px;">
-        <v-carousel
-          delimiter-icon="mdi-horseshoe"
-        >
-          <v-carousel-item
-            :src="require('../assets/c1.png' )"
-            reverse-transition="fade-transition"
-            transition="fade-transition"
-          ></v-carousel-item>
-          <v-carousel-item
-            :src="require('../assets/c2.png' )"
-            reverse-transition="fade-transition"
-            transition="fade-transition"
-          ></v-carousel-item>
-        </v-carousel>
+        <v-card>
+          <v-carousel
+            @change="btnChange = !btnChange"
+            delimiter-icon="mdi-horseshoe"
+          >
+            <v-carousel-item
+              :src="require('../assets/c1.png' )"
+              reverse-transition="fade-transition"
+              transition="fade-transition"
+            ></v-carousel-item>
+            <v-carousel-item
+              :src="require('../assets/c2.png' )"
+              reverse-transition="fade-transition"
+              transition="fade-transition"
+            ></v-carousel-item>
+          </v-carousel>
+          <v-card-text>
+            <v-row justify="center">
+              <v-btn v-if="btnChange" class="black mx-4 white--text" height="50px" width="200px">
+                View Web Map
+              </v-btn>
+              <v-btn v-if="!btnChange" class="black mx-4 white--text" height="50px" width="200px">
+                View Program Data
+              </v-btn>
+            </v-row>
+          </v-card-text>
+          <!-- <v-list two-line>
+            <v-list-item>
+              <v-list-item-avatar>
+                <v-img src="https://cdn.vuetifyjs.com/images/john.png"></v-img>
+              </v-list-item-avatar>
+              <v-list-item-content>
+                <v-list-item-title>John Leider</v-list-item-title>
+                <v-list-item-subtitle>Author</v-list-item-subtitle>
+              </v-list-item-content>
+              <v-list-item-action>
+                <v-switch
+                  v-model="cycle"
+                  label="Cycle Slides"
+                  inset
+                ></v-switch>
+              </v-list-item-action>
+            </v-list-item>
+          </v-list> -->
+        </v-card>
       </v-container>
       <center>
         <v-footer class="foot" style="background-color: #1976D2 !important;" padless>
@@ -120,7 +151,8 @@
     },
     data() {
       return {
-        icons: ["mdi-facebook", "mdi-twitter", "mdi-linkedin", "mdi-instagram"]
+        icons: ["mdi-facebook", "mdi-twitter", "mdi-linkedin", "mdi-instagram"],
+        btnChange: false
       }
     }
   }
