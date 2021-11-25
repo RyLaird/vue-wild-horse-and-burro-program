@@ -109,6 +109,10 @@
         <v-row class="mb-5">
           <v-col>
             <h3>Wild burros average 11 hands high (44 inches) and weigh about 500 pounds.</h3>
+            <v-img class="mt-13"
+              src="../assets/burro_sil.png"
+            >
+            </v-img>
           </v-col>
           <v-col>
             <v-card
@@ -121,6 +125,10 @@
           </v-col>
           <v-col>
             <h3>Most wild horses stand 13 to 15 hands high (52-60 inches) and weigh from 700 to 1,000 pounds.</h3>
+            <v-img
+              src="../assets/horse_sil.png"
+            >
+            </v-img>
           </v-col>
         </v-row>
         <v-divider></v-divider>
