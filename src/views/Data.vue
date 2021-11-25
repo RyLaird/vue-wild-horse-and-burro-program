@@ -66,7 +66,7 @@
             <v-container>
               <v-row>
                 <v-col cols="12" md="7">
-                  <pie-chart></pie-chart>
+                  <tree-chart></tree-chart>
                 </v-col>
                 <v-col cols="12" md="5">
                   <div>
@@ -74,7 +74,7 @@
                       86,189
                     </h1>
                     <p>
-                        As required under the Wild Free-Roaming Horses and Burros Act of 1971, 
+                      As required under the Wild Free-Roaming Horses and Burros Act of 1971, 
                       the BLM conducts an annual population inventory to estimate the number of 
                       wild horses and burros roaming BLM-managed lands in the West. To promote 
                       healthy conditions on the range, the BLM determines what it calls the Appropriate 
@@ -191,7 +191,7 @@
 
 <script>
   import DataIntro from '../components/DataIntro'
-  import PieChart from '../components/PieChart'
+  import TreeChart from '../components/TreeChart'
   import LineChart from '../components/LineChart.vue'
   // import PopulationMap from '../components/PopulationMap.vue'
   import Sankey from '../components/Sankey.vue'
@@ -202,7 +202,7 @@
 
     components: {
       DataIntro,
-      PieChart,
+      TreeChart,
       LineChart,
       Sankey,
       // Pictorial
