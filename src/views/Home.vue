@@ -62,7 +62,7 @@
       class="overflow-y-auto"
       max-height="800"
     >
-      <v-container style="height: 2000px;">
+      <v-container style="height: 3000px;">
         <v-card class="mt-10">
           <v-carousel
             @change="btnChange = !btnChange"
@@ -111,6 +111,7 @@
             <h3>Wild burros average 11 hands high (44 inches) and weigh about 500 pounds.</h3>
             <v-img class="mt-13"
               src="../assets/burro_sil.png"
+              max-width="300px"
             >
             </v-img>
           </v-col>
@@ -127,6 +128,7 @@
             <h3>Most wild horses stand 13 to 15 hands high (52-60 inches) and weigh from 700 to 1,000 pounds.</h3>
             <v-img
               src="../assets/horse_sil.png"
+              max-width="300px"
             >
             </v-img>
           </v-col>
@@ -137,6 +139,34 @@
             <h1 class="text-center">Program History</h1>
           </v-col>
         </v-row>
+        <v-row class="mb-5">
+          <v-col>
+            <v-timeline>
+              <v-timeline-item
+                v-for="(year, i) in years"
+                :key="i"
+                :color="year.color"
+                small
+              >
+                <template v-slot:opposite>
+                  <span
+                    :class="`headline font-weight-bold ${year.color}--text`"
+                    v-text="year.year"
+                  ></span>
+                </template>
+                <div class="py-4">
+                  <h2 :class="`headline font-weight-light mb-4 ${year.color}--text`">
+                    {{year.header}}
+                  </h2>
+                  <div>
+                    {{year.description}}
+                  </div>
+                </div>
+              </v-timeline-item>
+            </v-timeline>
+          </v-col>
+        </v-row>
+        <v-divider></v-divider>
       </v-container>
       <center>
         <v-footer class="foot" style="background-color: #1976D2 !important;" padless>
@@ -181,7 +211,39 @@
     data() {
       return {
         icons: ["mdi-facebook", "mdi-twitter", "mdi-linkedin", "mdi-instagram"],
-        btnChange: false
+        btnChange: false,
+        years: [
+          {
+            color: 'blue',
+            year: 'Early 1950s',
+            header: 'Wild Horse Annie',
+            description: 'During the 1950s, Velma B. Johnston, later known as "Wild Horse Annie," became aware of the ruthless and indiscriminate manner in which wild horses were being treated on western rangelands.  So-called "mustangers" played a major role in harvesting wild horses for commercial purposes during this time.',
+          },
+          {
+            color: 'cyan',
+            year: 'Late 1950s',
+            header: 'Grassroots Campaign',
+            description: 'Wild Horse Annie led a grassroots campaign, famously involving many school children.  Newspapers published articles about the exploitation of wild horses and burros.  As noted by the Associated Press on July 15, 1959: "Seldom has an issue touched such a responsive chord."'
+          },
+          {
+            color: 'teal',
+            year: '1959',
+            header: 'Wild Horse Annie Act',
+            description: "In January 1959, Nevada Rep. Walter Baring introduced a bill prohibiting the use of motorized vehicles to hunt wild horses and burros on public lands.  The Wild Horse Annie Act became Public Law 86-234 on Sept. 8, 1959, but it did not include Annie's recommendation that Congress initiate a program to protect, manage and control wild horses and burros."
+          },
+          {
+            color: 'blue',
+            year: 'Early 1970s',
+            header: 'Mustangers',
+            description: 'By 1971, the population of wild horses on public lands had declined significantly because of the encroachment of man and the impact of mustangers.'
+          },
+          {
+            color: 'cyan',
+            year: '1971',
+            header: 'Wild Free-Roaming Horses and Burro Act',
+            description: 'In response to public outcry, Congress unanimously passed the “Wild Free-Roaming Horses and Burros Act” (Public Law 92-195) to provide for the necessary management, protection and control of wild horses and burros on public lands.  President Richard M. Nixon signed the bill into law on December 15, 1971. '
+          },
+        ],
       }
     }
   }
