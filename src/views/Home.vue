@@ -62,7 +62,7 @@
       class="overflow-y-auto"
       max-height="800"
     >
-      <v-container style="height: 1000px;">
+      <v-container style="height: 2000px;">
         <v-card>
           <v-carousel
             @change="btnChange = !btnChange"
@@ -89,25 +89,20 @@
               </v-btn>
             </v-row>
           </v-card-text>
-          <!-- <v-list two-line>
-            <v-list-item>
-              <v-list-item-avatar>
-                <v-img src="https://cdn.vuetifyjs.com/images/john.png"></v-img>
-              </v-list-item-avatar>
-              <v-list-item-content>
-                <v-list-item-title>John Leider</v-list-item-title>
-                <v-list-item-subtitle>Author</v-list-item-subtitle>
-              </v-list-item-content>
-              <v-list-item-action>
-                <v-switch
-                  v-model="cycle"
-                  label="Cycle Slides"
-                  inset
-                ></v-switch>
-              </v-list-item-action>
-            </v-list-item>
-          </v-list> -->
         </v-card>
+        <v-row class= "mt-8 mb-8">
+          <h1>About Wild Horses and Burros</h1>
+        </v-row>
+        <v-row>
+          <v-col>
+            <p>
+              Wild horses and burros are defined by federal law as unbranded, unclaimed, free-roaming horses or burros found on public lands in the United States.  Today, the Bureau of Land Management protects and manages wild horses and burros in balance with other public resource values on 177 herd management areas across 26.9 million acres of public lands. Most wild horses and burros living today are descendants of animals that were released or escaped from Spanish explorers, ranchers, miners, the U.S. Cavalry and Native Americans.
+
+Wild horses and burros are diverse in their coloring, ranging from solid brown and black to colorful pintos and palominos.  Most wild horses stand 13 to 15 hands high (52-60 inches) and weigh from 700 to 1,000 pounds.  Wild burros average 11 hands high (44 inches) and weigh about 500 pounds. 
+            </p>
+          </v-col>
+        </v-row>
+        <v-divider></v-divider>
       </v-container>
       <center>
         <v-footer class="foot" style="background-color: #1976D2 !important;" padless>
