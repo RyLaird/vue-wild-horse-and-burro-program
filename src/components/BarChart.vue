@@ -41,18 +41,41 @@ export default {
       },
       yAxis: {
         type: 'category',
-        data: ['1971', '2021']
+        data: ['1971', '2021'],
+        axisLabel: {
+          fontSize: 20  
+        }
       },
       series: [
         {
           name: 'Total Horses and Burros',
           type: 'bar',
           // stack: 'total',
-          data: [25300, 86189],
+          data: [
+            25300,
+            {
+              name: 2021,
+              value: 86189,
+              itemStyle: {
+                color: '#91cd8c'
+              }
+            }
+          ],
           markLine: {
-            lineStyle: {
-              type: 'dashed'
+            label: {
+              show: true,
+              position: 'middle',
+              formatter: "3.5 X GREATER",
+              fontWeight: "bold",
+              fontSize: 28
             },
+            lineStyle: {
+              type: 'dashed',
+              width: 2,
+              color: 'black',
+              opacity: .8
+            },
+            symbolSize: 14,
             data: [[{ type: 'min' }, { type: 'max' }]]
           }
         }

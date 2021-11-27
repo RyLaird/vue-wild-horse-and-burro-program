@@ -5,7 +5,7 @@
         <h1 class="teal--text display-2 font-weight-bold mb-6">
           Program Data
         </h1>
-        <p>
+        <p class='text-subtitle-1'>
           The Bureau of Land Management manages, protects, and controls 
           wild horses and burros under the authority of the 1971 Wild 
           Free-Roaming Horses and Burros Act (as amended by Congress 
@@ -21,12 +21,12 @@
     <v-row class="justify-center">
         <v-img
         src="../assets/pasture.jpg"
-        max-width="800px"
+        max-width="1200px"
         >
         </v-img>
     </v-row>
     <v-row>
-      <p>
+      <p class="text-caption">
         Photo by <a href="https://unsplash.com/@hollymandarich?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Holly Mandarich</a> on <a href="https://unsplash.com/s/photos/horse-pasture?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
       </p>
     </v-row>
