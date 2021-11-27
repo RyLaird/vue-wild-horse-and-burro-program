@@ -60,6 +60,62 @@
     <v-container>
       <data-intro></data-intro>
       <div>
+        <!-- <h3>Hello</h3> -->
+        <v-card class="mt-5 mb-8">
+          <v-card-text>
+            <v-container>
+              <v-row>
+                <v-col>
+                  <h1 class="text-center font-weight-bold">
+                    3.5X Greater Population
+                  </h1>
+                </v-col>
+                <v-col>
+                  <h2 class="text-center mb-3">Myth</h2>
+                  <v-alert
+                  color="red"
+                  type="error"
+                  prominent
+                  >
+                    The BLM is managing wild horse herds to extinction.
+                  </v-alert>
+                  <h2 class="text-center mb-3">Truth</h2>
+                  <v-alert
+                  type="success"
+                  elevation="3"
+                  prominent
+                  >
+                  The BLM is seeking to achieve the Appropriate Management Level of 26,690 wild horses and burros on Western public rangelands
+                  </v-alert>
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col cols="12" md="7">
+                  <bar-chart></bar-chart>
+                </v-col>
+                <v-col cols="12" md="5">
+                  <div>
+                    <h1 class="text-center font-weight-bold mb-10">
+                      86,189
+                    </h1>
+                    <p>
+                      The BLM offers wild horses and burros that 
+                      were removed from the range for adoption into 
+                      private care. Since 1971, the BLM has adopted out 
+                      more than 250,000 wild horses and burros nationwide. 
+                      Potential adopters can attend an off-site adoption event, 
+                      visit a BLM adoption center, or participate in an Internet
+                      Adoption event. For general questions on adopting a wild 
+                      horse or burro, visit the Frequently Asked Questions page.
+                    </p>
+                  </div>
+                </v-col>
+              </v-row>
+            </v-container>
+          </v-card-text>
+        </v-card>
+      </div>
+      <div>
         <h3>Hello</h3>
         <v-card class="mt-5 mb-8">
           <v-card-text>
@@ -153,37 +209,6 @@
           </v-card-text>
         </v-card>
       </div>
-            <div>
-        <h3>Hello</h3>
-        <v-card class="mt-5 mb-8">
-          <v-card-text>
-            <v-container>
-              <v-row>
-                <v-col cols="12" md="7">
-                  <!-- <pictorial></pictorial> -->
-                </v-col>
-                <v-col cols="12" md="5">
-                  <div>
-                    <h1 class="text-center font-weight-bold mb-10">
-                      86,189
-                    </h1>
-                    <p>
-                      The BLM offers wild horses and burros that 
-                      were removed from the range for adoption into 
-                      private care. Since 1971, the BLM has adopted out 
-                      more than 250,000 wild horses and burros nationwide. 
-                      Potential adopters can attend an off-site adoption event, 
-                      visit a BLM adoption center, or participate in an Internet
-                      Adoption event. For general questions on adopting a wild 
-                      horse or burro, visit the Frequently Asked Questions page.
-                    </p>
-                  </div>
-                </v-col>
-              </v-row>
-            </v-container>
-          </v-card-text>
-        </v-card>
-      </div>
     </v-container>
     </v-main>
   </div>
@@ -193,9 +218,8 @@
   import DataIntro from '../components/DataIntro'
   import TreeChart from '../components/TreeChart'
   import LineChart from '../components/LineChart.vue'
-  // import PopulationMap from '../components/PopulationMap.vue'
   import Sankey from '../components/Sankey.vue'
-  // import Pictorial from '../components/Pictorial.vue'
+  import BarChart from '../components/BarChart.vue'
 
   export default {
     name: 'Data',
@@ -205,8 +229,7 @@
       TreeChart,
       LineChart,
       Sankey,
-      // Pictorial
-    },
+      BarChart    },
   }
 
 </script>
