@@ -64,15 +64,11 @@
         <v-card class="mt-5 mb-8">
           <v-card-text>
             <v-container>
-              <v-row>
+              <v-row class="mb-5">
                 <v-col>
-                  <h1 class="text-center font-weight-bold">
-                    3.5X Greater Population
-                  </h1>
-                  <bar-chart></bar-chart>
-                </v-col>
-                <v-col>
-                  <h2 class="text-center mb-3">Myth</h2>
+                  <br>
+                  <br>
+                  <h2 class="text-center mt-8 mb-3">Myth</h2>
                   <v-alert
                   color="red"
                   type="error"
@@ -92,12 +88,15 @@
                   The BLM is seeking to achieve the Appropriate Management Level of 26,690 wild horses and burros on Western public rangelands
                   </v-alert>
                 </v-col>
-              </v-row>
-              <v-row>
-                <div>
-                  <h1 class="text-center font-weight-bold mb-10">
-                    86,189
+                <v-col>
+                  <h1 class="text-center font-weight-bold">
+                    Population Increase
                   </h1>
+                  <bar-chart></bar-chart>
+                </v-col>
+              </v-row>
+              <v-row class="mt-5">
+                <div>
                   <p>
                     The 2021 on-range population of wild horses and burros 
                     (approximately 86,189) is nearly three and a half times greater than 
@@ -117,7 +116,6 @@
         </v-card>
       </div>
       <div>
-        <h3>Hello</h3>
         <v-card class="mt-5 mb-8">
           <v-card-text>
             <v-container>
@@ -128,12 +126,15 @@
                 <v-col cols="12" md="5">
                   <div>
                     <h1 class="text-center font-weight-bold mb-10">
-                      86,189
+                      86,189 Horses and Burros by State
                     </h1>
                     <p>
                       As required under the Wild Free-Roaming Horses and Burros Act of 1971, 
                       the BLM conducts an annual population inventory to estimate the number of 
-                      wild horses and burros roaming BLM-managed lands in the West. To promote 
+                      wild horses and burros roaming BLM-managed lands in the West.
+                    </p>
+                    <p>
+                      To promote 
                       healthy conditions on the range, the BLM determines what it calls the Appropriate 
                       Management Level (AML), which is the number of wild horses and burros that 
                       can thrive in balance with other public land resources and uses. Wild horses 
