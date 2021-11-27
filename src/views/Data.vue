@@ -67,8 +67,7 @@
               <v-row class="mb-5">
                 <v-col>
                   <br>
-                  <br>
-                  <h2 class="text-center mt-8 mb-3">Myth</h2>
+                  <h2 class="text-center mt-2 mb-3">Myth</h2>
                   <v-alert
                   color="red"
                   type="error"
@@ -87,17 +86,7 @@
                   >
                   The BLM is seeking to achieve the Appropriate Management Level of 26,690 wild horses and burros on Western public rangelands
                   </v-alert>
-                </v-col>
-                <v-col>
-                  <h1 class="text-center font-weight-bold">
-                    Population Increase
-                  </h1>
-                  <bar-chart></bar-chart>
-                </v-col>
-              </v-row>
-              <v-row class="mt-5">
-                <div>
-                  <p>
+                  <p class='text-subtitle-1 mt-8'>
                     The 2021 on-range population of wild horses and burros 
                     (approximately 86,189) is nearly three and a half times greater than 
                     the number found roaming in 1971 (about 25,300). The BLM is 
@@ -109,6 +98,16 @@
                     assistance agreement, researchers at Texas A&M University analyze 
                     the samples and reports recommendations to the BLM for specific herds.
                   </p>
+                </v-col>
+                <v-col>
+                  <h1 class="text-center font-weight-bold">
+                    Population Increase
+                  </h1>
+                  <bar-chart></bar-chart>
+                </v-col>
+              </v-row>
+              <v-row class="mt-5">
+                <div>
                 </div>
               </v-row>
             </v-container>
@@ -121,13 +120,13 @@
             <v-container>
               <v-row>
                 <v-col cols="12" md="7">
+                  <h1 class="text-center font-weight-bold mb-10">
+                    86,189 Horses and Burros by State
+                  </h1>
                   <tree-chart></tree-chart>
                 </v-col>
                 <v-col cols="12" md="5">
                   <div>
-                    <h1 class="text-center font-weight-bold mb-10">
-                      86,189 Horses and Burros by State
-                    </h1>
                     <p>
                       As required under the Wild Free-Roaming Horses and Burros Act of 1971, 
                       the BLM conducts an annual population inventory to estimate the number of 

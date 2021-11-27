@@ -63,11 +63,19 @@ export default {
           ],
           markLine: {
             label: {
-              show: false
+              show: true,
+              position: 'middle',
+              formatter: "3.5 X GREATER",
+              fontWeight: "bold",
+              fontSize: 28
             },
             lineStyle: {
-              type: 'dashed'
+              type: 'dashed',
+              width: 2,
+              color: 'black',
+              opacity: .8
             },
+            symbolSize: 14,
             data: [[{ type: 'min' }, { type: 'max' }]]
           }
         }

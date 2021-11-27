@@ -5,7 +5,7 @@
         <h1 class="teal--text display-2 font-weight-bold mb-6">
           Program Data
         </h1>
-        <p>
+        <p class='text-subtitle-1'>
           The Bureau of Land Management manages, protects, and controls 
           wild horses and burros under the authority of the 1971 Wild 
           Free-Roaming Horses and Burros Act (as amended by Congress 
