@@ -21,6 +21,17 @@ export default {
       tooltip: {
         trigger: "item"
       },
+      textStyle: {
+        fontSize: 10,
+        fontWeight: 'bold',
+        fontFamily: 'sans-serif'
+      },
+      aria: {
+        enabled: true,
+        // decal: {
+        //   show: true
+        // }
+      },
       series: [
         {
           type: 'treemap',
@@ -30,11 +41,11 @@ export default {
               value: 7161,
               children: [
                 {
-                  name: 'Arizona - Horses',
+                  name: 'ARIZONA - Horses',
                   value: 539
                 },
                 {
-                  name: 'Arizona - Burros',
+                  name: 'ARIZONA- Burros',
                   value: 6622
                 }
               ]
@@ -44,11 +55,11 @@ export default {
               value: 10569,
               children: [
                 {
-                  name: 'California - Horses',
+                  name: 'CALIFORNIA - Horses',
                   value: 7312
                 },
                 {
-                  name: 'California - Burros',
+                  name: 'CALIFORNIA - Burros',
                   value: 3257
                 }
               ]
@@ -58,7 +69,7 @@ export default {
               value: 2412,
               children: [
                 {
-                  name: 'Colorado - Horses',
+                  name: 'COLORADO - Horses',
                   value: 2412
                 }
               ]
@@ -68,7 +79,7 @@ export default {
               value: 639,
               children: [
                 {
-                  name: 'Idaho - Horses',
+                  name: 'IDAHO - Horses',
                   value: 639
                 }
               ]
@@ -78,7 +89,7 @@ export default {
               value: 180,
               children: [
                 {
-                  name: 'Montana - Horses',
+                  name: 'MONTANA- Horses',
                   value: 180
                 }
               ]
@@ -88,21 +99,21 @@ export default {
               value: 42994,
               children: [
                 {
-                  name: 'Nevada Horses',
+                  name: 'NEVADA - Horses',
                   value: 42994
                 },
                 {
-                  name: 'Nevada - Burros',
+                  name: 'NEVADA - Burros',
                   value: 4087
                 }
               ]
             },
             {
-              name: 'New Mexico',
+              name: 'NEW MEXICO',
               value: 237,
               children: [
                 {
-                  name: 'New Mexico - Horses',
+                  name: 'NEW MEXICO - Horses',
                   value: 237
                 }
               ]
@@ -112,11 +123,11 @@ export default {
               value: 6048,
               children: [
                 {
-                  name: 'Oregon - Horses',
+                  name: 'OREGON - Horses',
                   value: 6009
                 },
                 {
-                  name: 'Oregon - Burros',
+                  name: 'OREGON- Burros',
                   value: 39
                 }
               ]
@@ -126,11 +137,11 @@ export default {
               value: 4121,
               children: [
                 {
-                  name: 'Utah - Horses',
+                  name: 'UTAH - Horses',
                   value: 3672
                 },
                 {
-                  name: 'Utah - Burros',
+                  name: 'UTAH - Burros',
                   value: 449
                 }
               ]
@@ -140,7 +151,7 @@ export default {
               value: 7741,
               children: [
                 {
-                  name: 'Wyoming - Horses',
+                  name: 'WYOMING - Horses',
                   value: 7741
                 }
               ]
