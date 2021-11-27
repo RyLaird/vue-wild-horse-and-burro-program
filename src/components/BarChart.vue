@@ -11,30 +11,53 @@ import 'echarts/lib/component/legend'
 import 'echarts/lib/component/tooltip'
 import 'echarts/lib/component/title'
 import 'echarts/lib/component/grid'
+import 'echarts/lib/component/markLine'
 
 export default {
   components: {
-      "v-chart": ECharts,
+    "v-chart": ECharts,
   },
-    data: () => ({
-        bar: {
-            xAxis: {
-                data: ['Q1', 'Q2', 'Q3', 'Q4']
-            },
-            yAxis: {
-                type: 'value'
-            },
-            series: [
-                {
-                    type: 'bar',
-                    data: [63,75,24,92]
-                }
-            ],
-            title: {
-                text: 'Wild Horse and Burro Adoptions',
-                x: 'center'
-            }
+  data: () => ({
+    bar: {
+      // title: {
+      //   text: ''
+      // },
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'shadow'
         }
-    })
+      },
+      // legend: {},
+      grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+      },
+      xAxis: {
+        type: 'value',
+        boundaryGap: [0, 0.01]
+      },
+      yAxis: {
+        type: 'category',
+        data: ['1971', '2021']
+      },
+      series: [
+        {
+          name: 'Total Horses and Burros',
+          type: 'bar',
+          // stack: 'total',
+          data: [25300, 86189],
+          markLine: {
+            lineStyle: {
+              type: 'dashed'
+            },
+            data: [[{ type: 'min' }, { type: 'max' }]]
+          }
+        }
+      ]
+    }
+  })  
 };
 </script>

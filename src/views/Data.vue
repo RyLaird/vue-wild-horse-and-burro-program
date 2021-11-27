@@ -69,13 +69,15 @@
                   <h1 class="text-center font-weight-bold">
                     3.5X Greater Population
                   </h1>
+                  <bar-chart></bar-chart>
                 </v-col>
                 <v-col>
                   <h2 class="text-center mb-3">Myth</h2>
                   <v-alert
                   color="red"
                   type="error"
-                  prominent
+                  text
+                  outlined
                   >
                     The BLM is managing wild horse herds to extinction.
                   </v-alert>
@@ -84,32 +86,31 @@
                   type="success"
                   elevation="3"
                   prominent
+                  text
+                  outlined
                   >
                   The BLM is seeking to achieve the Appropriate Management Level of 26,690 wild horses and burros on Western public rangelands
                   </v-alert>
                 </v-col>
               </v-row>
               <v-row>
-                <v-col cols="12" md="7">
-                  <bar-chart></bar-chart>
-                </v-col>
-                <v-col cols="12" md="5">
-                  <div>
-                    <h1 class="text-center font-weight-bold mb-10">
-                      86,189
-                    </h1>
-                    <p>
-                      The BLM offers wild horses and burros that 
-                      were removed from the range for adoption into 
-                      private care. Since 1971, the BLM has adopted out 
-                      more than 250,000 wild horses and burros nationwide. 
-                      Potential adopters can attend an off-site adoption event, 
-                      visit a BLM adoption center, or participate in an Internet
-                      Adoption event. For general questions on adopting a wild 
-                      horse or burro, visit the Frequently Asked Questions page.
-                    </p>
-                  </div>
-                </v-col>
+                <div>
+                  <h1 class="text-center font-weight-bold mb-10">
+                    86,189
+                  </h1>
+                  <p>
+                    The 2021 on-range population of wild horses and burros 
+                    (approximately 86,189) is nearly three and a half times greater than 
+                    the number found roaming in 1971 (about 25,300). The BLM is 
+                    seeking to achieve the Appropriate Management Level of 26,690 
+                    wild horses and burros on Western public rangelands, or about 
+                    68,000 fewer than the current West-wide on-range population. 
+                    The BLM monitors the genetic diversity of each herd through 
+                    collection of hair samples during gather operations. Under an 
+                    assistance agreement, researchers at Texas A&M University analyze 
+                    the samples and reports recommendations to the BLM for specific herds.
+                  </p>
+                </div>
               </v-row>
             </v-container>
           </v-card-text>
