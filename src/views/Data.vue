@@ -66,7 +66,6 @@
             <v-container>
               <v-row class="mb-5">
                 <v-col>
-                  <br>
                   <h2 class="text-center mt-2 mb-3">Myth</h2>
                   <v-alert
                   color="red"
@@ -126,22 +125,37 @@
                   <tree-chart></tree-chart>
                 </v-col>
                 <v-col cols="12" md="5">
-                  <div>
-                    <p>
-                      As required under the Wild Free-Roaming Horses and Burros Act of 1971, 
-                      the BLM conducts an annual population inventory to estimate the number of 
-                      wild horses and burros roaming BLM-managed lands in the West.
-                    </p>
-                    <p>
-                      To promote 
-                      healthy conditions on the range, the BLM determines what it calls the Appropriate 
-                      Management Level (AML), which is the number of wild horses and burros that 
-                      can thrive in balance with other public land resources and uses. Wild horses 
-                      and burros that exceed AML (which is 26,785) are to be removed from the range, 
-                      in accordance with the 1971 law, as amended. The current estimated on-range wild 
-                      horse and burro population (as of March 1, 2021) is 86,189 animals. 
-                    </p>
-                  </div>
+                  <v-row class='mt-5 mb-8'>
+                    <v-img
+                      src="../assets/Nevada.png"
+                    >
+                    </v-img>
+                    <v-img
+                      src='../assets/California.png'
+                    >
+                    </v-img>
+                    <v-img
+                      src='../assets/Wyoming.png'
+                    >
+                    </v-img>
+                  </v-row>
+                  <h3 class='text-center font-weight-bold mb-5'>
+                    Top 3 States with Highest Population
+                  </h3>
+                  <p class='text subtitle-1'>
+                    As required under the Wild Free-Roaming Horses and Burros Act of 1971, 
+                    the BLM conducts an annual population inventory to estimate the number of 
+                    wild horses and burros roaming BLM-managed lands in the West.
+                  </p>
+                  <p class='text subtitle-1'>
+                    To promote 
+                    healthy conditions on the range, the BLM determines what it calls the Appropriate 
+                    Management Level (AML), which is the number of wild horses and burros that 
+                    can thrive in balance with other public land resources and uses. Wild horses 
+                    and burros that exceed AML (which is 26,785) are to be removed from the range, 
+                    in accordance with the 1971 law, as amended. The current estimated on-range wild 
+                    horse and burro population (as of March 1, 2021) is 86,189 animals. 
+                  </p>
                 </v-col>
               </v-row>
             </v-container>
