@@ -119,6 +119,8 @@
             <v-container>
               <v-row>
                 <v-col cols="12" md="7">
+                  <br>
+                  <br>
                   <h1 class="text-center font-weight-bold mb-10">
                     86,189 Horses and Burros by State
                   </h1>

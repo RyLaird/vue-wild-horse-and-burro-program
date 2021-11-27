@@ -32,9 +32,11 @@ export default {
         //   show: true
         // }
       },
+      color: ['#2d7c61', '#70d1f2', '#bfdda6', '#FFCCE5', '#CCCCFF', '#FFE5CC', '#C0C0C0', '#B266FF', '#FF66B2', '#FFB266'],
       series: [
         {
           type: 'treemap',
+          height: '100%',
           data: [
             {
               name: 'Arizona',
