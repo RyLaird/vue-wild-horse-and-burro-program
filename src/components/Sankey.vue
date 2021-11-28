@@ -1,6 +1,6 @@
 <template>
   <div class="line-wrapper">
-    <v-chart :options="sankey" autoresize />
+    <v-chart :options="sankey" autoresize/>
   </div>
 </template>
 
@@ -24,6 +24,7 @@ export default {
             series: {
                 type: 'sankey',
                 layout: 'none',
+                height: '90%',
                 emphasis: {
                     focus: 'adjacency'
                 },
@@ -47,48 +48,72 @@ export default {
                     },
                     {
                         name: 'Off-Range'
+                    },
+                    {
+                        name: 'Corrals'
+                    },
+                    {
+                        name: 'Pastures',
+                    },
+                    {
+                        name: 'Public Pastures'
                     }
                 ],
                 links: [
                     {
                         source: 'Horses',
                         target: 'Removed',
-                        value: 9181
+                        value: 11748
                     },
                     {
                         source: 'Burros',
                         target: 'Removed',
-                        value: 1643
+                        value: 1918
                     },
                     {
                         source: 'Horses',
                         target: 'Adopted',
-                        value: 3311
+                        value: 5698
                     },
                     {
                         source: 'Burros',
                         target: 'Adopted',
-                        value: 1430
+                        value: 1671
                     },
                     {
                         source: 'Horses',
                         target: 'Sold to Good Homes',
-                        value: 1096
+                        value: 726
                     },
                     {
                         source: 'Burros',
                         target: 'Sold to Good Homes',
-                        value: 326
+                        value: 542
                     },
                     {
                         source: 'Horses',
                         target: 'Off-Range',
-                        value: 50354
+                        value: 55478
                     },
                     {
                         source: 'Burros',
                         target: 'Off-Range',
-                        value: 1343
+                        value: 1198
+                    },
+                    {
+                        source: 'Off-Range',
+                        target: 'Corrals',
+                        value: 16432
+                    },
+                    {
+                        source: 'Off-Range',
+                        target: 'Pastures',
+                        value: 37892
+                    },
+                    {
+                        source: 'Off-Range',
+                        target: 'Public Pastures',
+                        value: 1154
                     }
                 ]
             }

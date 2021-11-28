@@ -66,6 +66,12 @@
             <v-container>
               <v-row class="mb-5">
                 <v-col>
+                  <h1 class="text-center font-weight-bold">
+                    Population Increase
+                  </h1>
+                  <bar-chart></bar-chart>
+                </v-col>
+                               <v-col>
                   <h2 class="text-center mt-2 mb-3">Myth</h2>
                   <v-alert
                   color="red"
@@ -98,16 +104,8 @@
                     the samples and reports recommendations to the BLM for specific herds.
                   </p>
                 </v-col>
-                <v-col>
-                  <h1 class="text-center font-weight-bold">
-                    Population Increase
-                  </h1>
-                  <bar-chart></bar-chart>
-                </v-col>
               </v-row>
               <v-row class="mt-5">
-                <div>
-                </div>
               </v-row>
             </v-container>
           </v-card-text>
@@ -118,14 +116,6 @@
           <v-card-text>
             <v-container>
               <v-row>
-                <v-col cols="12" md="7">
-                  <br>
-                  <br>
-                  <h1 class="text-center font-weight-bold mb-10">
-                    86,189 Horses and Burros by State
-                  </h1>
-                  <tree-chart></tree-chart>
-                </v-col>
                 <v-col cols="12" md="5">
                   <v-row class='mt-5 mb-8'>
                     <v-img
@@ -159,36 +149,69 @@
                     horse and burro population (as of March 1, 2021) is 86,189 animals. 
                   </p>
                 </v-col>
+                <v-col cols="12" md="7">
+                  <br>
+                  <br>
+                  <h1 class="text-center font-weight-bold mb-10">
+                    86,189 Horses and Burros by State
+                  </h1>
+                  <tree-chart></tree-chart>
+                </v-col>
               </v-row>
             </v-container>
           </v-card-text>
         </v-card>
       </div>
       <div>
-        <h3>Hello</h3>
         <v-card class="mt-5 mb-8">
           <v-card-text>
             <v-container>
               <v-row>
-                <v-col cols="12" md="5">
+                <v-col>
+                  <h1 class='text-center mb-5'>
+                    Horse and Burro Population Control
+                  </h1>
+                  <sankey></sankey>
+                </v-col>
+                <v-col>
                   <div>
-                    <h1 class="text-center font-weight-bold mb-10">
-                      86,189
-                    </h1>
+                    <h2 class="text-center mb-2">
+                      Off-Range
+                    </h2>
                     <p>
-                      The BLM offers wild horses and burros that 
-                      were removed from the range for adoption into 
-                      private care. Since 1971, the BLM has adopted out 
-                      more than 250,000 wild horses and burros nationwide. 
-                      Potential adopters can attend an off-site adoption event, 
-                      visit a BLM adoption center, or participate in an Internet
-                      Adoption event. For general questions on adopting a wild 
-                      horse or burro, visit the Frequently Asked Questions page.
+                      All off-range (unadopted or unsold) wild horses and burros, 
+                      like those roaming Western public rangelands, are protected 
+                      by the BLM under the 1971 Wild Free-Roaming Horses and Burros Act, 
+                      as amended. These off-range horses and burros are fed and cared for 
+                      in either off-range corrals or pastures at a cost of nearly $50 million a year.
+                    </p>
+                    <h2 class='text-center mb-2'>
+                      Removed
+                    </h2>
+                    <p>
+                      Wild horses and burros have virtually no natural predators and their herd sizes 
+                      can double about every four years. As a result, the BLM removes thousands of animals 
+                      from the range each year as part of its efforts to control herd sizes. 
+                    </p>
+                    <h2 class='text-center mb-2'>
+                      Sold to Good Homes
+                    </h2>
+                    <p>
+                      About 8,400 wild horses and burros immediately became eligible for sale under the 
+                      December 2004 sale-authority law (the so-called "Burns Amendment"), which directs 
+                      the BLM to sell "without limitation" to any willing buyers animals that are either 
+                      more than 10 years old or have been passed over for adoption at least three times. 
+                      Since 2005, the BLM has sold more than 5,900 horses and burros. 
+                    </p>
+                    <h2 class='text-center mb-2'>
+                      Adopted
+                    </h2>
+                    <p>
+                      The BLM offers wild horses and burros that were removed from the range for adoption 
+                      into private care. Since 1971, the BLM has adopted out more than 250,000 wild horses 
+                      and burros nationwide.
                     </p>
                   </div>
-                </v-col>
-                <v-col cols="12" md="7">
-                  <sankey></sankey>
                 </v-col>
               </v-row>
             </v-container>
