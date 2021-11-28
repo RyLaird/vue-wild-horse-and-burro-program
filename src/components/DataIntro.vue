@@ -19,11 +19,13 @@
       </v-col>
     </v-row>
     <v-row class="justify-center">
+      <v-card>
         <v-img
         src="../assets/pasture.jpg"
         max-width="1200px"
         >
         </v-img>
+      </v-card>
     </v-row>
     <v-row>
       <p class="text-caption">
