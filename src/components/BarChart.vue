@@ -46,6 +46,8 @@ export default {
           fontSize: 20  
         }
       },
+      width: '80%',
+      height: '80%',
       series: [
         {
           name: 'Total Horses and Burros',
@@ -84,3 +86,10 @@ export default {
   })  
 };
 </script>
+
+<style scoped>
+.echarts {
+    width: 100%;
+    height: 400px;
+}
+</style>

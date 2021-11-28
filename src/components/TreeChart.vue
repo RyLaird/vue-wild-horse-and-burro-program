@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="line-wrapper">
     <v-chart :options="tree" autoresize/>
   </div>
 </template>
@@ -33,6 +33,8 @@ export default {
         // }
       },
       color: ['#2d7c61', '#70d1f2', '#bfdda6', '#FFCCE5', '#CCCCFF', '#FFE5CC', '#C0C0C0', '#B266FF', '#FF66B2', '#FFB266'],
+      height: '80%',
+      width: '80%',
       series: [
         {
           type: 'treemap',
@@ -167,3 +169,10 @@ export default {
   })
 };
 </script>
+
+<style scoped>
+.echarts {
+    width: 100%;
+    height: 550px;
+}
+</style>
