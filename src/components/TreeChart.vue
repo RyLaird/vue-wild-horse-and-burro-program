@@ -36,7 +36,9 @@ export default {
       series: [
         {
           type: 'treemap',
+          name: 'Home',
           height: '100%',
+          roam: 'move',
           data: [
             {
               name: 'Arizona',
