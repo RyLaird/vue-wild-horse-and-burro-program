@@ -54,12 +54,19 @@ export default {
           type: 'bar',
           // stack: 'total',
           data: [
-            25300,
+            {
+              name: 1971,
+              value: 25300,
+              itemStyle: {
+                color: '#81D4FA'
+              }
+
+            },
             {
               name: 2021,
               value: 86189,
               itemStyle: {
-                color: '#91cd8c'
+                color: '#00695C'
               }
             }
           ],
