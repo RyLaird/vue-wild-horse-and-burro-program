@@ -7,20 +7,73 @@
       v-model="drawer"
       app
       fixed
+      style='z-index:2001'
     >
       <!-- set if loading true - will dissapear on all geojsons load -->
-      <span v-if="loading">Loading...</span>
+      
+      <!-- <span v-if="loading">Loading...</span> -->
       <!-- checkbox for herd areas layer toggle - defaults true in data() script -->
+      <v-row class=" ml-5 mt-8">
       <v-checkbox
         v-model="show1"
         :label="'Herd Areas'"
       >
       </v-checkbox>
+      <div class="text-center mt-3 ml-4">
+        <v-dialog
+          v-model="dialog"
+          width="650"
+        >
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn
+              color="teal darken-3"
+              dark
+              v-bind="attrs"
+              v-on="on"
+            >
+              <v-icon >
+                mdi-information
+              </v-icon>
+            </v-btn>
+          </template>
+
+          <v-card>
+            <v-card-title class="text-h5 grey lighten-2 mb-4">
+              What are Herd Areas and Herd Management Areas?
+            </v-card-title>
+
+            <v-card-text class="text subtitle-1">
+              In 1971, when Congress passed the Wild Free-Roaming Horses and Burros Act, 
+              these animals were found roaming across 53.8 million acres of public land, 
+              known as Herd Areas, of which 42.4 million acres were under the BLM’s jurisdiction. 
+              Today, the BLM manages wild horses in subsets of these Herd Areas, known as 
+              Herd Management Areas (HMAs), that comprise 31.6 million acres. 
+            </v-card-text>
+
+            <!-- <v-divider></v-divider> -->
+
+            <!-- <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn
+                color="primary"
+                text
+                @click="dialog = false"
+              >
+                I accept
+              </v-btn>
+            </v-card-actions> -->
+          </v-card>
+        </v-dialog>
+      </div>
+      </v-row>
       <!-- allows color change for herd areas -->
-      <input
-        v-model="fillColor1"
-        type="color"
-      >
+      <v-row class="ml-10">
+        <input
+          v-model="fillColor1"
+          type="color"
+        >
+        <p>choose color</p>
+      </v-row>
       <!-- checkbox for Herd Management Areas - default true in data() script -->
       <v-checkbox
         v-model="show2"
