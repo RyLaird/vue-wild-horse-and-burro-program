@@ -7,31 +7,124 @@
       v-model="drawer"
       app
       fixed
+      style='z-index:2001'
     >
+
+          <!-- style='z-index:2001' -->
       <!-- set if loading true - will dissapear on all geojsons load -->
-      <span v-if="loading">Loading...</span>
+      
+      <span v-if="loading" class="text-h4">Loading...</span>
       <!-- checkbox for herd areas layer toggle - defaults true in data() script -->
-      <v-checkbox
-        v-model="show1"
-        :label="'Herd Areas'"
-      >
-      </v-checkbox>
+      <v-row>
+        <div class="text-center mt-3 ml-4">
+        <v-dialog
+          v-model="dialog"
+          width="650"
+          eager
+        >
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn class="mt-3 ml-6"
+              color="teal darken-3"
+              dark
+              v-bind="attrs"  
+              v-on="on"
+              block
+            >
+              <v-icon class="mr-4">
+                mdi-information
+              </v-icon>
+              Information
+            </v-btn>
+          </template>
+
+          <v-card>
+            <v-card-title class="white--text teal darken-3 mb-4">
+              What are Herd Areas and Herd Management Areas?
+            </v-card-title>
+
+            <v-card-text class="text subtitle-1">
+              In 1971, when Congress passed the Wild Free-Roaming Horses and Burros Act, 
+              these animals were found roaming across 53.8 million acres of public land, 
+              known as Herd Areas, of which 42.4 million acres were under the BLM’s jurisdiction. 
+              Today, the BLM manages wild horses in subsets of these Herd Areas, known as 
+              Herd Management Areas (HMAs), that comprise 31.6 million acres. 
+            </v-card-text>
+
+            <!-- <v-divider></v-divider> -->
+
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn
+                color="primary"
+                text
+                @click="dialog = false"
+              >
+                Close
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
+      </div>
+      </v-row>
+      <v-row class=" ml-5 mt-8">
+        <v-checkbox
+          v-model="show1"
+          color="teal darken-3"
+          class="text"
+        >
+          <template v-slot:label>
+            <div class="text-subtitle-1">
+              Herd Area
+            </div>
+          </template>
+        </v-checkbox>
+      </v-row>
       <!-- allows color change for herd areas -->
-      <input
-        v-model="fillColor1"
-        type="color"
-      >
+      <v-row>
+        <v-btn
+          class="ml-12"
+          @click="chooseColor = !chooseColor">
+            Choose Color
+        </v-btn>
+        <v-color-picker
+          v-if="chooseColor"
+          v-model="fillColor1"
+          dot-size="25"
+          swatches-max-height="200"
+          width="250"
+          class="mt-5 ml-4"
+        >
+        </v-color-picker>
+      </v-row>
       <!-- checkbox for Herd Management Areas - default true in data() script -->
       <v-checkbox
         v-model="show2"
-        :label="'Herd Management Areas'"
+        class="ml-5 mt-12"
+        color="teal darken-3"
       >
+        <template v-slot:label>
+          <div class="text-subtitle-1 text-center">
+            Herd Management Area
+          </div>
+        </template>
       </v-checkbox>
       <!-- allows color change for herd management areas -->
-      <input
-        v-model="fillColor2"
-        type="color"
-      >
+      <v-row>
+        <v-btn
+          class="ml-12 mt-3"
+          @click="chooseColor2 = !chooseColor2">
+            Choose Color
+        </v-btn>
+        <v-color-picker
+          v-if="chooseColor2"
+          v-model="fillColor2"
+          dot-size="25"
+          swatches-max-height="200"
+          width="250"
+          class="mt-5 ml-4"
+        >
+        </v-color-picker>
+      </v-row>
       <!-- checkbox for Adoption location points - defaults false in data() script -->
       <v-checkbox
         v-model="show3"
@@ -197,6 +290,8 @@ export default {
       geojson_HMA: null,
       fillColor1: "#e4ce7f",
       fillColor2: "#91251d",
+      chooseColor: false,
+      chooseColor2: false,
       url: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
       attribution:
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions>CARTO</a>',
@@ -252,7 +347,7 @@ export default {
         return () => {};
       }
       return (feature, layer) => {
-        layer.bindTooltip(
+        layer.bindPopup(
           "<div>Name: " +
             feature.properties.HA_NAME +
             "</div><div>Estimated Horses: " +
@@ -269,7 +364,7 @@ export default {
         return () => {};
       }
       return (feature, layer) => {
-        layer.bindTooltip(
+        layer.bindPopup(
           "<div>Name: " +
             feature.properties.HMA_NAME +
             "</div><div>Estimated Horses: " +
@@ -287,7 +382,7 @@ export default {
         //   this.map = this.$refs.myMap.mapObject
         //   this.map.fitBounds(layer.getBounds())
         // })
-        layer.bindPopup(
+        layer.bindTooltip(
             "<div>City: " +
             feature.properties.city +
             "</div><div>Address: " +
