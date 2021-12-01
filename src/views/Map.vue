@@ -282,12 +282,13 @@ export default {
       map: true,
       show1: true,
       show2: true,
-      show3: false,
+      show3: true,
       enableTooltip: true,
       zoom: 6,
       center: [39, -109],
       geojson_HA: null,
       geojson_HMA: null,
+      geojson_adoption: null,
       fillColor1: "#e4ce7f",
       fillColor2: "#91251d",
       chooseColor: false,
@@ -412,7 +413,6 @@ export default {
     this.loading = false;
   }
 };
-
 
 </script>
 
