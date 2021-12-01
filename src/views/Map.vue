@@ -119,7 +119,6 @@
           v-if="chooseColor2"
           v-model="fillColor2"
           dot-size="25"
-          swatches-max-height="200"
           width="250"
           class="mt-5 ml-4"
         >
@@ -217,6 +216,7 @@
               :url="url"
               :attribution="attribution"
             />
+            <l-control-scale position="topright" :imperial="true" :metric="false"></l-control-scale>
             <!-- vue-leaflet herd areas geojson container -->
             <l-geo-json
               v-if="show1"
@@ -251,7 +251,7 @@
 
 // import { latLng } from "leaflet";
 // import {L} from 'leaflet'
-import { LMap, LTileLayer, LGeoJson} from "vue2-leaflet";
+import { LMap, LTileLayer, LGeoJson, LControlScale} from "vue2-leaflet";
 import 'leaflet/dist/leaflet.css'
 import { Icon } from 'leaflet';
 
@@ -273,6 +273,7 @@ export default {
     LMap,
     LTileLayer,
     LGeoJson,
+    LControlScale
     // LMarker
   },
   data() {
@@ -289,8 +290,8 @@ export default {
       geojson_HA: null,
       geojson_HMA: null,
       geojson_adoption: null,
-      fillColor1: "#e4ce7f",
-      fillColor2: "#91251d",
+      fillColor1: "#e4ce7fFF",
+      fillColor2: "#91251dFF",
       chooseColor: false,
       chooseColor2: false,
       url: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
@@ -411,6 +412,11 @@ export default {
     this.geojson_adoption = data_adoption;
 
     this.loading = false;
+  },
+  methods: {
+    recenterMap() {
+      this.$refs.myMap.mapObject.flyTo([39, -109], 6)
+  }
   }
 };
 
