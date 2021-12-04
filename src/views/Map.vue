@@ -124,19 +124,23 @@
         >
         </v-color-picker>
       </v-row>
-      <!-- checkbox for Adoption location points - defaults false in data() script -->
-      <v-checkbox
-        v-model="show3"
-        :label="'Adoption Locations'"
+      <v-row
+        class="ml-5 mt-3"
       >
-      </v-checkbox>
-      <v-spacer>
-      <v-spacer></v-spacer>
-      </v-spacer>
+      <!-- checkbox for Adoption location points - defaults false in data() script -->
+        <v-checkbox
+          v-model="show3"
+          :label="'Adoption Locations'"
+        >
+        </v-checkbox>
+      </v-row>
       <!-- home button to recenter map -->
-      <v-btn @click="recenterMap()">
-        <span class="mdi mdi-home" />
-      </v-btn>  
+      <v-row class="ml-10">
+        <v-btn @click="recenterMap()">
+          <span class="mdi mdi-home" />
+          Reset View
+        </v-btn>  
+      </v-row>
     <!-- end of navigation drawer -->
     </v-navigation-drawer>
     <!-- begin app header props app and height -->
