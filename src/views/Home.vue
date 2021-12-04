@@ -81,10 +81,10 @@
           </v-carousel>
           <v-card-text>
             <v-row justify="center">
-              <v-btn v-if="btnChange" class="black mx-4 white--text" height="50px" width="200px">
+              <v-btn v-if="btnChange" class="black mx-4 white--text" height="50px" width="200px" to="/map">
                 View Web Map
               </v-btn>
-              <v-btn v-if="!btnChange" class="black mx-4 white--text" height="50px" width="200px">
+              <v-btn v-if="!btnChange" class="black mx-4 white--text" height="50px" width="200px" to="/data">
                 View Program Data
               </v-btn>
             </v-row>
