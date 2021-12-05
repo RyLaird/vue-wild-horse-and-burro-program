@@ -9,14 +9,21 @@
       fixed
       style='z-index:2001'
     >
+      <v-row class = "text-center mt-10">
+        <v-col>
+          <h3 class="teal--text text--darken-3">
+            Herd Area Management
+          </h3>
+        </v-col>
+      </v-row>
 
           <!-- style='z-index:2001' -->
       <!-- set if loading true - will dissapear on all geojsons load -->
       
       <span v-if="loading" class="text-h4">Loading...</span>
-      <!-- checkbox for herd areas layer toggle - defaults true in data() script -->
+      <!-- checkbox for herd areas layer toggle - defaults true in data() script -->  
       <v-row>
-        <div class="text-center mt-10 ml-4">
+        <div class="text-center ml-4">
         <v-dialog
           v-model="dialog"
           width="650"
@@ -128,6 +135,7 @@
       <!-- checkbox for Adoption location points - defaults false in data() script -->
         <v-divider></v-divider>
           <v-checkbox
+          color="blue darken-3"
             class="ml-5"
             v-model="show3"
             :label="'Adoption Locations'"
@@ -264,8 +272,8 @@ import { Icon } from 'leaflet';
 // fix to icons not displaying on leaflet map in Map.vue
 delete Icon.Default.prototype._getIconUrl;
 Icon.Default.mergeOptions({
-  iconRetinaUrl: require('/src/assets/horse.png'),
-  iconUrl: require('/src/assets/horse.png'),
+  iconRetinaUrl: require('/src/assets/horseshoe_icon.png'),
+  iconUrl: require('/src/assets/horseshoe_icon.png'),
   shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
   shadowSize: [20,20],
   iconSize: [40,40]
@@ -295,8 +303,8 @@ export default {
       geojson_HA: null,
       geojson_HMA: null,
       geojson_adoption: null,
-      fillColor1: "#e4ce7fFF",
-      fillColor2: "#91251dFF",
+      fillColor1: "#BCAAA4FF",
+      fillColor2: "#5D4037FF",
       chooseColor: false,
       chooseColor2: false,
       url: 'https://api.mapbox.com/styles/v1/rlaird2/ckwo8jew23mns14lrzvnnxh63/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoicmxhaXJkMiIsImEiOiJja2JmN2x6aWIwc3VmMzVvNDl5Mzk1ejNuIn0.rrNaMaCy39_ntp7qPvp0dQ',
