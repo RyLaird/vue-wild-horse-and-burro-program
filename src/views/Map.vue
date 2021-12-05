@@ -11,9 +11,10 @@
     >
       <v-row class = "text-center mt-10">
         <v-col>
-          <h3 class="teal--text text--darken-3">
-            Herd Area Management
+          <h3 class="brown--text text--darken-2">
+            Wild Horse and Burro
           </h3>
+          <h3 class="brown--text text--darken-2">Herd Locations</h3>
         </v-col>
       </v-row>
 
@@ -31,7 +32,7 @@
         >
           <template v-slot:activator="{ on, attrs }">
             <v-btn class="mt-3 ml-6"
-              color="teal darken-3"
+              color="brown darken-2"
               dark
               v-bind="attrs"  
               v-on="on"
@@ -45,7 +46,7 @@
           </template>
 
           <v-card>
-            <v-card-title class="white--text teal darken-3 mb-4">
+            <v-card-title class="white--text brown darken-2 mb-4">
               What are Herd Areas and Herd Management Areas?
             </v-card-title>
 
@@ -73,7 +74,7 @@
       <v-row class=" ml-5 mt-8">
         <v-checkbox
           v-model="show1"
-          color="teal darken-3"
+          color="brown lighten-2"
           class="text"
         >
           <template v-slot:label>
@@ -104,7 +105,7 @@
       <v-checkbox
         v-model="show2"
         class="ml-5 mt-12"
-        color="teal darken-3"
+        color="brown darken-2"
       >
         <template v-slot:label>
           <div class="text-subtitle-1 text-center">
