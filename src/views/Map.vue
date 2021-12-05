@@ -299,8 +299,8 @@ export default {
       show2: true,
       show3: true,
       enableTooltip: true,
-      zoom: 6,
-      center: [39, -109],
+      zoom: 5.6,
+      center: [39, -105],
       geojson_HA: null,
       geojson_HMA: null,
       geojson_adoption: null,
@@ -429,7 +429,7 @@ export default {
   },
   methods: {
     recenterMap() {
-      this.$refs.myMap.mapObject.flyTo([39, -109], 6)
+      this.$refs.myMap.mapObject.flyTo([39, -105], 6)
     }
   }
 };
