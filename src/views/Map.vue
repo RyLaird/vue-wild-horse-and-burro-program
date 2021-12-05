@@ -16,7 +16,7 @@
       <span v-if="loading" class="text-h4">Loading...</span>
       <!-- checkbox for herd areas layer toggle - defaults true in data() script -->
       <v-row>
-        <div class="text-center mt-3 ml-4">
+        <div class="text-center mt-10 ml-4">
         <v-dialog
           v-model="dialog"
           width="650"
@@ -49,22 +49,19 @@
               Today, the BLM manages wild horses in subsets of these Herd Areas, known as 
               Herd Management Areas (HMAs), that comprise 31.6 million acres. 
             </v-card-text>
-
-            <!-- <v-divider></v-divider> -->
-
-            <v-card-actions>
-              <v-spacer></v-spacer>
-              <v-btn
-                color="primary"
-                text
-                @click="dialog = false"
-              >
-                Close
-              </v-btn>
-            </v-card-actions>
-          </v-card>
-        </v-dialog>
-      </div>
+              <v-card-actions>
+                <v-spacer></v-spacer>
+                <v-btn
+                  color="primary"
+                  text
+                  @click="dialog = false"
+                >
+                  Close
+                </v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-dialog>
+        </div>
       </v-row>
       <v-row class=" ml-5 mt-8">
         <v-checkbox
@@ -111,7 +108,7 @@
       <!-- allows color change for herd management areas -->
       <v-row>
         <v-btn
-          class="ml-12 mt-3"
+          class="ml-12 mt-3 mb-5"
           @click="chooseColor2 = !chooseColor2">
             Choose Color
         </v-btn>
@@ -125,14 +122,18 @@
         </v-color-picker>
       </v-row>
       <v-row
-        class="ml-5 mt-3"
+        class="mt-3"
       >
+      <v-col>
       <!-- checkbox for Adoption location points - defaults false in data() script -->
-        <v-checkbox
-          v-model="show3"
-          :label="'Adoption Locations'"
-        >
-        </v-checkbox>
+        <v-divider></v-divider>
+          <v-checkbox
+            class="ml-5"
+            v-model="show3"
+            :label="'Adoption Locations'"
+          >
+          </v-checkbox>
+        </v-col>
       </v-row>
       <!-- home button to recenter map -->
       <v-row class="ml-10">
