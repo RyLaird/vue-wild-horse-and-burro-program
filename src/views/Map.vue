@@ -249,20 +249,6 @@
 
       <v-spacer></v-spacer>
 
-      <!-- ***** BUTTONS CURRENTLY NOT SET ****** -->
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-heart</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-dots-vertical</v-icon>
-      </v-btn>
-      <!-- ******** BUTTONS CURRENTLY NOT SET ******* -->
-
       <!-- set up app header links to pages -->
       <template v-slot:extension>
         <v-tabs 

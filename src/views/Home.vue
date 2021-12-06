@@ -18,23 +18,11 @@
 
       <!-- <v-app-bar-nav-icon></v-app-bar-nav-icon> -->
 
-      <v-app-bar-title class="text-center justify-left py-5">
+      <v-app-bar-title class="title">
         Horse and Burro Program
       </v-app-bar-title>
 
       <v-spacer></v-spacer>
-
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-heart</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-dots-vertical</v-icon>
-      </v-btn>
 
       <template v-slot:extension>
         <v-tabs 
@@ -62,7 +50,7 @@
       class="overflow-y-auto"
       max-height="800"
     >
-      <v-container style="height: 3000px;">
+      <v-container style="height: 2000px;">
         <v-card class="mt-10">
           <v-carousel
             @change="btnChange = !btnChange"
