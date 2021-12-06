@@ -217,7 +217,7 @@
       </v-row>
       <!-- home button to recenter map -->
       <v-row class="ml-10">
-        <v-btn @click="recenterMap()">
+        <v-btn @click="recenterMap()" class="v-step-5">
           <span class="mdi mdi-home" />
           Reset View
         </v-btn>  
@@ -241,7 +241,7 @@
       </template>
 
       <!-- hamburger button to switch navigation drawer -->
-      <v-app-bar-nav-icon @click="drawer = !drawer" class="v-step-5"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click="drawer = !drawer" class="v-step-6"></v-app-bar-nav-icon>
 
       <!-- <v-app-bar-title class="text-center justify-left py-5">
         Horse and Burro Program
@@ -417,6 +417,13 @@ export default {
         },
         {
           target: '.v-step-5',
+          header: {
+            title: 'Reset',
+          },
+          content: 'Click here to return to orginal view'
+        },
+        {
+          target: '.v-step-6',
           header: {
             title: 'Toggle Legend',
           },
