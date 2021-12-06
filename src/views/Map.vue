@@ -3,6 +3,7 @@
   <div class="data">
     <!--start of navigation drawer - set drawer to null below in data {} -->
     <!-- pass app and fixed - app will keep the nav drawer with scroll -->
+    <v-tour name="myTour" :steps="steps"></v-tour>
     <v-navigation-drawer
       v-model="drawer"
       app
@@ -11,7 +12,7 @@
     >
       <v-row class = "text-center mt-10">
         <v-col>
-          <h3 class="brown--text text--darken-2">
+          <h3 class="v-step-0 brown--text text--darken-2">
             Wild Horse and Burro
           </h3>
           <h3 class="brown--text text--darken-2">Herd Locations</h3>
@@ -31,7 +32,7 @@
           eager
         >
           <template v-slot:activator="{ on, attrs }">
-            <v-btn class="mt-3 ml-6"
+            <v-btn class="v-step-1 mt-3 ml-6"
               color="brown darken-2"
               dark
               v-bind="attrs"  
@@ -108,7 +109,7 @@
         color="brown darken-2"
       >
         <template v-slot:label>
-          <div class="text-subtitle-1 text-center">
+          <div class="v-step-2 text-subtitle-1 text-center">
             Herd Management Area
           </div>
         </template>
@@ -116,7 +117,7 @@
       <!-- allows color change for herd management areas -->
       <v-row>
         <v-btn
-          class="ml-12 mt-3 mb-5"
+          class="v-step-3 ml-12 mt-3 mb-5"
           @click="chooseColor2 = !chooseColor2">
             Choose Color
         </v-btn>
@@ -129,10 +130,6 @@
         >
         </v-color-picker>
       </v-row>
-      <v-row
-        class="mt-3"
-      >
-      <v-col>
       <!-- checkbox for Adoption location points - defaults false in data() script -->
       <v-divider></v-divider>
       <v-row class = "text-center mt-3">
@@ -142,9 +139,76 @@
           </h3>
         </v-col>
       </v-row>
+      <v-row>
+        <div class="text-center ml-4">
+        <v-dialog
+          v-model="dialog"
+          width="650"
+          eager
+        >
+          <template v-slot:activator="{ on, attrs1 }">
+            <v-btn class="mt-3 ml-6"
+              color="blue darken-2"
+              dark
+              v-bind="attrs1"  
+              v-on="on"
+              block
+            >
+              <v-icon class="mr-4">
+                mdi-information
+              </v-icon>
+              Information
+            </v-btn>
+          </template>
+
+          <v-card>
+            <v-card-title class="white--text blue darken-2 mb-4">
+              Adoption and Sales
+            </v-card-title>
+
+            <v-card-text class="text subtitle-1">
+              The BLM offers wild horses and burros for adoption 
+              or purchase at events across the country throughout the year.
+              With the phased resumption of normal operations in many states and 
+              localities around the country, the BLM is working bureau-wide 
+              with federal, state, and local public health authorities to closely 
+              monitor the COVID-19 pandemic. The health, safety, and well-being of 
+              the public, employees, volunteers, and partners is paramount as we begin 
+              to restore normal operations. We are increasing public access to wild 
+              horse and burro off-range adoption and sale facilities on a case-by-case 
+              basis while examining and regularly monitoring each facility and service 
+              provided to ensure we comply with current public health guidance.
+            </v-card-text>
+            <v-card-text class="text subtitle-1">
+               Most facilities are open for business, subject to certain limitations 
+              (e.g. modified hours, if by appointment, social distancing requirements, etc.) 
+              which can be found on the individual facility pages. With public health in mind, 
+              the following facilities remain closed at this time:  
+            </v-card-text>
+            <v-card-text class="text subtitle-1 text-bold">
+              Facility in Canon City, CO is temporarily closed
+              Facility in Elm Creek, NE is temporarily closed
+              Details and updates on operations will continue to be posted here and on our social media channels.
+            </v-card-text>
+              <v-card-actions>
+                <v-spacer></v-spacer>
+                <v-btn
+                  color="primary"
+                  text
+                  @click="dialog = false"
+                >
+                  Close
+                </v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-dialog>
+        </div>
+      </v-row>
+      <v-row>
+        <v-col>
           <v-checkbox
-          color="blue darken-3"
-            class="ml-5"
+            color="blue darken-3"
+            class="v-step-4 ml-5"
             v-model="show3"
             :label="'Adoption Locations'"
           >
@@ -177,7 +241,7 @@
       </template>
 
       <!-- hamburger button to switch navigation drawer -->
-      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click="drawer = !drawer" class="v-step-5"></v-app-bar-nav-icon>
 
       <!-- <v-app-bar-title class="text-center justify-left py-5">
         Horse and Burro Program
@@ -318,6 +382,55 @@ export default {
       url: 'https://api.mapbox.com/styles/v1/rlaird2/ckwo8jew23mns14lrzvnnxh63/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoicmxhaXJkMiIsImEiOiJja2JmN2x6aWIwc3VmMzVvNDl5Mzk1ejNuIn0.rrNaMaCy39_ntp7qPvp0dQ',
       attribution:
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions>CARTO</a>',
+      steps: [
+        {
+          target: '.v-step-0',  // We're using document.querySelector() under the hood
+          header: {
+            title: 'Explore Map Features',
+          },
+          content: `In this <strong>Guided Tour </strong>!`
+        },
+        {
+          target: '.v-step-1',
+          content: 'Click information button to learn more about map layers'
+        },
+        {
+          target: '.v-step-2',
+          header: {
+            title: '<strong> Toggle Layers <strong>'
+          },
+          content: 'Click checkbox to turn layers on/off. Click Herd Area or Herd Management area on map to display estimated Horses and Burros'
+        },
+        {
+          target: '.v-step-3',
+          header: {
+            title: 'Change Color',
+          },
+          content: 'Click here to change the color and opacity of areas!'
+        },
+        {
+          target: '.v-step-4',
+          header: {
+            title: 'Adoptions',
+          },
+          content: 'Toggle Layer here. Hover over icons on map to display Adoption Location information'
+        },
+        {
+          target: '.v-step-5',
+          header: {
+            title: 'Toggle Legend',
+          },
+          content: 'Click here to close legend and expand the map!'
+        }
+
+        // {
+        //   target: '[data-v-step="2"]',
+        //   content: 'Try it, you\'ll love it!<br>You can put HTML in the steps and completely customize the DOM to suit your needs.',
+        //   params: {
+        //     placement: 'top' // Any valid Popper.js placement. See https://popper.js.org/popper-documentation.html#Popper.placements
+        //   }
+        // }
+      ]
     };
   },
   computed: {
@@ -438,6 +551,9 @@ export default {
     recenterMap() {
       this.$refs.myMap.mapObject.flyTo([39, -105], 6)
     }
+  },
+  mounted: function () {
+    this.$tours['myTour'].start()
   }
 };
 
