@@ -134,7 +134,14 @@
       >
       <v-col>
       <!-- checkbox for Adoption location points - defaults false in data() script -->
-        <v-divider></v-divider>
+      <v-divider></v-divider>
+      <v-row class = "text-center mt-3">
+        <v-col>
+          <h3 class="blue--text text--darken-3">
+            Adoption
+          </h3>
+        </v-col>
+      </v-row>
           <v-checkbox
           color="blue darken-3"
             class="ml-5"
