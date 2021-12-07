@@ -16,8 +16,6 @@
         ></v-img>
       </template>
 
-      <!-- <v-app-bar-nav-icon></v-app-bar-nav-icon> -->
-
       <v-app-bar-title class="title">
         Horse and Burro Program
       </v-app-bar-title>
@@ -156,34 +154,6 @@
         </v-row>
         <v-divider></v-divider>
       </v-container>
-      <!-- <center>
-        <v-footer class="foot" style="background-color: #1976D2 !important;" padless>
-          <v-card
-            style="width:100% !important"
-            flat
-            tile
-            class="blue darken-2 white--text text-center"
-          >
-            <v-card-text>
-              <v-btn v-for="icon in icons" :key="icon" class="mx-4 white--text" icon>
-                <v-icon size="24px">{{ icon }}</v-icon>
-              </v-btn>
-            </v-card-text>
-
-            <v-card-text
-              class="white--text pt-0"
-              style="width:100% !important"
-            >This is a project using public data and does not reflect the views of the Bureau of Land Management Wild Horse Program</v-card-text>
-
-            <v-divider></v-divider>
-
-            <v-card-text class="white--text">
-              {{ new Date().getFullYear() }} —
-              <strong>Wild Horse and Burro Program</strong>
-            </v-card-text>
-          </v-card>
-        </v-footer>
-      </center> -->
     </v-sheet>
       <center>
         <v-footer class="foot" style="background-color: #1976D2 !important;" padless>
@@ -217,7 +187,6 @@
 </template>
 
 <script>
-  // import HelloWorld from '../components/HelloWorld'
 
   export default {
     name: 'Home',
