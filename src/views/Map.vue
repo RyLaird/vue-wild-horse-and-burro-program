@@ -27,7 +27,7 @@
       <v-row>
         <div class="text-center ml-4">
         <v-dialog
-          v-model="dialog"
+          v-model="dialog1"
           width="650"
           eager
         >
@@ -38,6 +38,7 @@
               v-bind="attrs"  
               v-on="on"
               block
+              
             >
               <v-icon class="mr-4">
                 mdi-information
@@ -63,7 +64,7 @@
                 <v-btn
                   color="primary"
                   text
-                  @click="dialog = false"
+                  @click="closeDialog1()"
                 >
                   Close
                 </v-btn>
@@ -142,7 +143,7 @@
       <v-row>
         <div class="text-center ml-4">
         <v-dialog
-          v-model="dialog"
+          v-model="dialog2"
           width="650"
           eager
         >
@@ -195,7 +196,7 @@
                 <v-btn
                   color="primary"
                   text
-                  @click="dialog = false"
+                  @click="closeDialog2()"
                 >
                   Close
                 </v-btn>
@@ -351,6 +352,8 @@ export default {
     return {
       drawer: null,
       loading: false,
+      dialog1: false,
+      dialog2: false,
       map: true,
       show1: true,
       show2: true,
@@ -543,6 +546,12 @@ export default {
   methods: {
     recenterMap() {
       this.$refs.myMap.mapObject.flyTo([39, -105], 6)
+    },
+    closeDialog1: function () {
+      this.dialog1 = false
+    },
+    closeDialog2: function () {
+      this.dialog2 = false
     }
   },
   mounted: function () {
